@@ -1,0 +1,43 @@
+.head-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.head-content-items {
+  width: 512px;
+  height: 735px;
+}
+.head-content-items h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 200px;
+}
+.head-content-items p {
+  font-size: 20px;
+  opacity: 0.7;
+  margin-top: 20px;
+}
+.head-content-items .price {
+  color: rgb(195, 153, 2);
+  font-size: 24px;
+  margin-top: 20px;
+}
+.header-btn {
+  display: flex;
+  justify-content: start;
+  align-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+.head-content-items:nth-child(2) {
+  background: rgb(243, 164, 27);
+  position: relative;
+}
+.head-img {
+  width: 400px;
+  height: auto;
+  position: absolute;
+  top: 110px;
+  left: 50px;
+}
