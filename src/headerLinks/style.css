@@ -1,0 +1,21 @@
+.content-home__link {
+  max-width: 900px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+}
+.content-home__items {
+  padding: 30px;
+}
+.content-home__items:nth-child(3) {
+  background-image: url('https://jthemes.net/themes/f-html/logancee/assets/img/common/mega_images_1.jpg');
+  object-fit: cover;
+  height: 300px;
+  width: auto;
+}
+.sub-list {
+  border-left: 1px solid #efefef;
+  margin-left: 10px;
+}

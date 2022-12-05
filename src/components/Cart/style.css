@@ -1,0 +1,149 @@
+.shop-cart__container {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-content: center;
+  height: 300px;
+  background: #f2f2f2;
+}
+.breadcrumb {
+  display: flex;
+  align-content: center !important;
+  justify-content: center !important;
+  align-content: center !important;
+  margin-top: 20px;
+}
+.shop-cart__title {
+  margin-top: 100px;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 1px;
+  /* width: 100%; */
+}
+.shop-cart__table th {
+  font-weight: 500;
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 10px 40px;
+  width: 300px;
+  text-align: start;
+  border-bottom: 1px solid #d2d2d2;
+}
+.shop-cart__table tr {
+  border-bottom: 1px solid #d2d2d2;
+}
+.shop-cart__table td {
+  width: 300px;
+  padding: 10px 40px;
+  text-align: start;
+  height: 160px;
+  border-bottom: 1px solid #d2d2d2;
+}
+.shop-cart__image {
+  width: 90px;
+}
+.shop-edit {
+  display: flex;
+  flex-direction: column;
+}
+.shop-edit .bx {
+  opacity: 0.5;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.shop-edit .bx:hover {
+  opacity: 1;
+}
+.shop-cart__buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+.shop-cart__buttons button {
+  width: 240px;
+  height: 50px;
+  font-size: 15px;
+  text-transform: uppercase;
+  background: #fff;
+  border: 1px solid #d2d2d2;
+  font-weight: 500;
+}
+.shop-clear {
+  margin-right: 20px;
+}
+.shop-cart__input {
+  display: flex;
+  justify-content: start;
+  margin-top: 50px;
+  width: 800px;
+}
+.shop-cart__input h1 {
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.shop-input__item {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin-right: 40px;
+}
+.shop-input__item input {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 20px;
+  background: #fff;
+  border: 1px solid #d2d2d2;
+  padding: 0 10px;
+}
+.ant-select {
+  height: 100px;
+}
+
+.ant-select-multiple .ant-select-selector {
+  border-radius: none;
+}
+.shop-input__item p {
+  margin-bottom: 40px;
+}
+.shop-input__item button {
+  width: 40%;
+  height: 50px;
+  background: #fff;
+  border: 1px solid #d2d2d2;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.cart-form {
+  display: flex;
+}
+.shop-total {
+  padding: 40px;
+  background: #efefef;
+  width: 380px;
+  height: 310px;
+  margin-top: 50px;
+  text-align: end;
+  /* text-transform: uppercase; */
+}
+.shop-total h4,
+h2,
+button {
+  text-transform: uppercase;
+  margin: 20px 0;
+}
+.shop-total button {
+  width: 100%;
+  height: 50px;
+  background: #454545;
+  color: #fff;
+  font-size: 16px;
+}
+.shop-total span {
+  color: red;
+}

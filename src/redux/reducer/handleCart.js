@@ -2,7 +2,6 @@ const cart = []
 
 const handleCart = (state = cart, action) => {
   const product = action.payload
-  console.log(product)
 
   switch (action.type) {
     case 'ADD_PRODUCT':
@@ -23,13 +22,13 @@ const handleCart = (state = cart, action) => {
         ]
       }
     case 'DELL_PRODUCT':
-      return state.filter((x) => x.id !== product)
+      return state.filter((x) => x.id !== product.id)
 
     case 'ICR_PRODUCT':
-      const icr = state.find((x) => x.id === product)
+      const icr = state.find((x) => x.id === product.id)
       if (icr) {
         return state.map((x) =>
-          x.id === product
+          x.id === product.id
             ? {
                 ...x,
                 qty: x.qty + 1,
@@ -46,12 +45,12 @@ const handleCart = (state = cart, action) => {
         ]
       }
     case 'DECR_PRODUCT':
-      const decr = state.find((x) => x.id === product)
+      const decr = state.find((x) => x.id === product.id)
       if (decr.qty === 1) {
-        return state.filter((x) => x.id !== product)
+        return state.filter((x) => x.id !== product.id)
       } else {
         return state.map((x) =>
-          x.id === product ? { ...x, qty: x.qty - 1 } : x
+          x.id === product.id ? { ...x, qty: x.qty - 1 } : x
         )
       }
     default:

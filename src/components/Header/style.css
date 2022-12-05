@@ -4,8 +4,8 @@
   align-items: center;
 }
 .head-content-items {
-  width: 512px;
-  height: 735px;
+  width: 700px;
+  height: 800px;
 }
 .head-content-items h1 {
   font-size: 3.5rem;
@@ -39,5 +39,5 @@
   height: auto;
   position: absolute;
   top: 110px;
-  left: 50px;
+  left: 100px;
 }

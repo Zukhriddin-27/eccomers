@@ -1,17 +1,25 @@
 import React, { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate, useParams } from 'react-router-dom'
 import './style.css'
 import { HomeOutlined } from '@ant-design/icons'
 import { Breadcrumb } from 'antd'
 import Loading from '../Loading'
-import { addItem } from '../../redux/action/index'
+import {
+  addItem,
+  decrProduct,
+  dellItem,
+  icrProduct,
+} from '../../redux/action/index'
 
 const Header = () => {
+  const state = useSelector((state) => state.handleCart)
   const [data, setData] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const dispatch = useDispatch()
-  const { id } = useParams()
+  // const { id } = useParams()
+  const navigate = useNavigate()
+  const [cartBtn, setCartBtn] = useState('Buy')
 
   const addToCart = (product) => {
     dispatch(addItem(product))
@@ -27,6 +35,11 @@ const Header = () => {
       })
   }, [])
   console.log(data)
+
+  const onSelect = (id) => {
+    navigate(`products/${id}`)
+    console.log(id)
+  }
   return (
     <div className='product-container'>
       <div className='content-title'>All Products</div>
@@ -59,8 +72,14 @@ const Header = () => {
                   className='product-image'
                 />
                 <div className='products-content__item'>
-                  <p className='product-title'>{items.title.slice(0, 20)}</p>
+                  <p
+                    className='product-title'
+                    onClick={() => onSelect(items.id)}
+                  >
+                    {items.title.slice(0, 20)}
+                  </p>
                   <p className='product-price'>${items.price}</p>
+
                   <button className='btn-cart' onClick={() => addToCart(items)}>
                     <i class='bx bx-cart-add'></i>
                   </button>
