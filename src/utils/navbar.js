@@ -1,5 +1,6 @@
 import React from 'react'
 import CartPage from '../page/Cart'
+import CategoryProductsPage from '../page/CategoryProduct'
 
 const Home = React.lazy(() => import('../page/Home'))
 const Products = React.lazy(() => import('../page/Products'))
@@ -16,7 +17,7 @@ export const navbar = [
     title: 'Home',
     path: '/home',
     private: false,
-    hidden: false,
+    hidden: true,
   },
   {
     id: 2,
@@ -28,7 +29,7 @@ export const navbar = [
     title: 'Products',
     path: '/products',
     private: false,
-    hidden: false,
+    hidden: true,
   },
   {
     id: 3,
@@ -38,20 +39,20 @@ export const navbar = [
       </React.Suspense>
     ),
     title: 'Product',
-    path: '/products/products/:id',
-    private: false,
-    hidden: false,
+    path: '/products/:id',
+    private: true,
+    hidden: true,
   },
   {
     id: 4,
-    element: <Products />,
+    element: <CategoryProductsPage />,
     title: 'Products',
-    path: '/products',
+    path: '/category/:category',
     private: false,
-    hidden: false,
+    hidden: true,
   },
   {
-    id: 4,
+    id: 5,
     element: <CartPage />,
     title: 'Cart',
     path: '/cart',

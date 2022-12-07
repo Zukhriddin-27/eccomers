@@ -88,7 +88,7 @@
   margin-left: 30px;
   border: none;
 }
-.bx {
+.bxs-trash {
   color: rgb(251, 194, 6);
 }
 .description {
@@ -112,3 +112,5 @@
 .show-cart {
   display: none;
 }
+
+/* image slider */

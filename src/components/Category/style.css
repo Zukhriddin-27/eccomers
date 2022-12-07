@@ -1,0 +1,31 @@
+.content-category {
+  margin-top: 60px;
+  padding: 20px;
+  /* height: 154px; */
+}
+.slider-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.slider-content img {
+  width: 128px;
+  height: 128px;
+  object-fit: scale-down;
+  position: relative;
+  border-radius: 50%;
+}
+.category-title {
+  color: #111;
+  font-size: 14px;
+  font-weight: 700;
+  height: 60px;
+  line-height: 1.43;
+  min-width: 100%;
+  overflow: hidden;
+  text-align: center;
+  transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 10px;
+  text-transform: capitalize;
+}

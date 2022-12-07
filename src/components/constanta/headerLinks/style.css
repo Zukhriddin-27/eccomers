@@ -1,0 +1,39 @@
+.content-home__link {
+  width: 300px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  height: auto;
+  background: #fff;
+  padding: 30px;
+}
+.title {
+  font-size: 16px;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+.content-home__language {
+  display: flex;
+  justify-content: start;
+}
+.content-home__language img {
+  margin-left: 10px;
+  width: 50px;
+  height: 30px;
+}
+
+.content-home__items ul li {
+  padding-bottom: 10px;
+}
+.content-home__items ul li a {
+  text-transform: uppercase;
+  font-size: 16px;
+
+  opacity: 0.7;
+}
+.sub-list .bx {
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
+  background: #000;
+  color: #fff;
+  text-align: center;
+}

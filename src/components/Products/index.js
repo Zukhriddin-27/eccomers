@@ -1,25 +1,18 @@
 import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { useLocation, useNavigate } from 'react-router-dom'
 import './style.css'
 import { HomeOutlined } from '@ant-design/icons'
 import { Breadcrumb } from 'antd'
 import Loading from '../Loading'
-import {
-  addItem,
-  decrProduct,
-  dellItem,
-  icrProduct,
-} from '../../redux/action/index'
+import { addItem } from '../../redux/action/index'
 
 const Header = () => {
-  const state = useSelector((state) => state.handleCart)
   const [data, setData] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const dispatch = useDispatch()
-  // const { id } = useParams()
+  const { search } = useLocation()
   const navigate = useNavigate()
-  const [cartBtn, setCartBtn] = useState('Buy')
 
   const addToCart = (product) => {
     dispatch(addItem(product))
@@ -27,18 +20,18 @@ const Header = () => {
 
   useEffect(() => {
     setIsLoading(true)
-    fetch(`https://fakestoreapi.com/products`)
+    fetch(`https://api.escuelajs.co/api/v1/products${search}
+    `)
       .then((res) => res.json())
       .then((res) => {
         setData(res)
         setIsLoading(false)
       })
-  }, [])
+  }, [search])
   console.log(data)
 
   const onSelect = (id) => {
-    navigate(`products/${id}`)
-    console.log(id)
+    navigate(`/products/${id}`)
   }
   return (
     <div className='product-container'>
@@ -66,21 +59,20 @@ const Header = () => {
             return (
               <div className='products-content__items'>
                 {/* eslint-disable-next-line */}
-                <img
-                  src={items.image}
-                  alt='product.jpg'
-                  className='product-image'
-                />
+                <img src={items.images[1]} alt='product.jpg' />
                 <div className='products-content__item'>
                   <p
                     className='product-title'
                     onClick={() => onSelect(items.id)}
                   >
-                    {items.title.slice(0, 20)}
+                    {items.title}
                   </p>
                   <p className='product-price'>${items.price}</p>
 
-                  <button className='btn-cart' onClick={() => addToCart(items)}>
+                  <button
+                    className='btn-cart__add'
+                    onClick={() => addToCart(items)}
+                  >
                     <i class='bx bx-cart-add'></i>
                   </button>
                 </div>

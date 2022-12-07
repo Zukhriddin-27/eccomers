@@ -1,54 +1,107 @@
 .content {
   width: 100%;
-  height: 130px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid #fff;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   padding: 0 150px;
   position: relative;
 }
+.bg {
+  background: #ffb32f;
+  color: #000;
+  height: 60px;
+}
+
 .content-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.content:nth-child(2) {
+  height: auto;
+}
+.content-items__nav {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 10px 0 10px;
 }
-.content-items:nth-child(2) {
+.content-items__nav h2:nth-child(3) {
+  border: 2px solid #000;
+  margin-left: 30px;
+  padding: 10px 30px;
+  border-radius: 8px;
+}
+
+.content-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.content-item p:nth-child(1) {
+  background: #fff;
+  color: #000;
+  padding: 8px 30px;
+  border-radius: 8px;
+}
+.content-item p:nth-child(2) {
+  border: 2px solid #000;
+  padding: 6px 20px;
+  border-radius: 8px;
+}
+.search-logo {
+  position: relative;
+  margin-left: 30px;
+}
+.bx-search-alt-2 {
   position: absolute;
-  right: 250px;
-  bottom: 20px;
+  right: -5px;
+  top: 3px;
+  background: #ffb32f;
+  padding: 8px 20px;
+  border-radius: 8px;
 }
 .search {
-  right: 270px;
-  position: absolute;
-  top: 30px;
-  width: 500px;
+  width: 700px;
   height: 50px;
   padding: 0 20px;
   font-size: 18px;
-  display: none;
-  transition: all 0.3s;
-}
-.search-active {
-  display: block;
+  background: #f2f2f2;
+  border: none;
+  border-radius: 8px;
 }
 
 .navLink {
   font-size: 16px;
   font-weight: 300;
-  padding: 0 40px;
+  padding: 0 20px;
+}
+.brand-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #111;
+  padding: 12px 30px;
+  margin-left: 20px;
+  font-size: 22px;
+  border-radius: 8px;
+}
+.brand-name h4 {
+  margin-left: 8px;
 }
 .navLink .bx-chevron-down {
   font-weight: 300;
   font-size: 16px;
 }
-.active {
-  color: yellow;
-}
+
 .bx {
   font-size: 28px;
   margin-right: 10px;
+  color: #000;
 }
 
 .cart {
@@ -76,8 +129,10 @@
 }
 .cart-image__add {
   width: 100px;
+  height: 140px;
   border-right: 0.5px solid rgb(164, 164, 164);
   padding: 5px;
+  object-fit: contain;
 }
 .cart-content__title {
   font-size: 20px;
@@ -130,8 +185,8 @@
 .product-cart__length {
   font-size: 18px;
   position: absolute;
-  top: 15px;
-  right: 3px;
+  bottom: 18px;
+  right: -4px;
   background: rgb(241, 196, 62);
   border: 1px solid #fff;
   text-align: center;
