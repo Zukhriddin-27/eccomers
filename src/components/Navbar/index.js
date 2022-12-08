@@ -77,7 +77,9 @@ const Navbar = () => {
       <div className='content '>
         <div className='content-items__nav'>
           <i class='bx bxs-watch'></i>
-          <h2 className='brand'>Rolex</h2>
+          <h2 className='brand' onClick={() => navigate('/home')}>
+            Rolex
+          </h2>
           <div>
             <Dropdown
               overlay={catalog}
@@ -131,7 +133,7 @@ const Navbar = () => {
             ></i>
             <div className='product-cart__length'>{state.length}</div>
           </div>
-          <div className='user-account'>
+          <div className='user-account' onClick={() => navigate('/register')}>
             <i class='bx bx-user'></i>
           </div>
         </div>

@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { useLocation, useNavigate } from 'react-router-dom'
 import './style.css'
 import { HomeOutlined } from '@ant-design/icons'
-import { Breadcrumb } from 'antd'
+import { Breadcrumb, Pagination } from 'antd'
 import Loading from '../Loading'
 import { addItem } from '../../redux/action/index'
 
@@ -57,30 +57,33 @@ const Header = () => {
         ) : (
           data.map((items) => {
             return (
-              <div className='products-content__items'>
-                {/* eslint-disable-next-line */}
-                <img src={items.images[1]} alt='product.jpg' />
-                <div className='products-content__item'>
-                  <p
-                    className='product-title'
-                    onClick={() => onSelect(items.id)}
-                  >
-                    {items.title}
-                  </p>
-                  <p className='product-price'>${items.price}</p>
+              <div>
+                <div className='products-content__items'>
+                  {/* eslint-disable-next-line */}
+                  <img src={items.images[1]} alt='product.jpg' />
+                  <div className='products-content__item'>
+                    <p
+                      className='product-title'
+                      onClick={() => onSelect(items.id)}
+                    >
+                      {items.title}
+                    </p>
+                    <p className='product-price'>${items.price}</p>
 
-                  <button
-                    className='btn-cart__add'
-                    onClick={() => addToCart(items)}
-                  >
-                    <i class='bx bx-cart-add'></i>
-                  </button>
+                    <button
+                      className='btn-cart__add'
+                      onClick={() => addToCart(items)}
+                    >
+                      <i class='bx bx-cart-add'></i>
+                    </button>
+                  </div>
                 </div>
               </div>
             )
           })
         )}
       </div>
+      {/* <Pagination defaultCurrent={1} total={200} />; */}
     </div>
   )
 }

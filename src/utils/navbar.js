@@ -1,4 +1,5 @@
 import React from 'react'
+import AuthPage from '../page/Auth'
 import CartPage from '../page/Cart'
 import CategoryProductsPage from '../page/CategoryProduct'
 
@@ -56,6 +57,14 @@ export const navbar = [
     element: <CartPage />,
     title: 'Cart',
     path: '/cart',
+    private: false,
+    hidden: true,
+  },
+  {
+    id: 6,
+    element: <AuthPage />,
+    title: 'Create User',
+    path: '/register',
     private: false,
     hidden: true,
   },
