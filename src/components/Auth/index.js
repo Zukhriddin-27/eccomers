@@ -134,6 +134,7 @@ const Auth = () => {
               class='form__input'
               type='text'
               name='name'
+              placeholder='Name'
               value={regName}
               onChange={(e) => setRegName(e.target.value)}
             />
@@ -141,6 +142,7 @@ const Auth = () => {
               class='form__input'
               type='text'
               name='email'
+              placeholder='Email'
               value={regEmail}
               onChange={(e) => setRegEmail(e.target.value)}
             />

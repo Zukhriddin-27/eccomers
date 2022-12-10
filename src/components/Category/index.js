@@ -23,7 +23,7 @@ const Category = () => {
   if (error) return 'An error has occurred: ' + error.message
   console.log(data)
   const handleLink = (product) => {
-    navigate(`/category/${product}`)
+    navigate(`/categories/${product}`)
   }
 
   return (
@@ -42,7 +42,7 @@ const Category = () => {
               <SwiperSlide>
                 <div
                   className='slider-content'
-                  onClick={() => handleLink(value?.name)}
+                  onClick={() => handleLink(value?.id)}
                 >
                   <img src={value?.image} />
                   <div className='category-title'>{value?.name}</div>

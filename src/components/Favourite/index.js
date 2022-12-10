@@ -1,46 +1,33 @@
-import React, { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { useLocation, useNavigate } from 'react-router-dom'
+import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import './style.css'
 import { HomeOutlined } from '@ant-design/icons'
 import { Breadcrumb } from 'antd'
 import Loading from '../Loading'
-import { addToFavourite } from '../../redux/action/favouriteActions'
+import { deleteFromFavourite } from '../../redux/action/favouriteActions'
 import { addToCart } from '../../redux/action/cartAction'
 
 const Header = () => {
-  const [data, setData] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const dispatch = useDispatch()
-  const { search } = useLocation()
-  console.log(search)
   const navigate = useNavigate()
+  const { favourite } = useSelector((state) => state.favourite)
 
-  const handleAddCart = (product) => {
+  const handleaddToCart = (product) => {
     dispatch(addToCart(product))
   }
-  const handleAddFavourite = (favourite) => {
-    dispatch(addToFavourite(favourite))
-  }
 
-  useEffect(() => {
-    setIsLoading(true)
-    fetch(`https://api.escuelajs.co/api/v1/products${search}
-    `)
-      .then((res) => res.json())
-      .then((res) => {
-        setData(res)
-        setIsLoading(false)
-      })
-  }, [search])
+  const handleDeleteFavourite = (product) => {
+    dispatch(deleteFromFavourite(product))
+  }
 
   const onSelect = (id) => {
     navigate(`/products/${id}`)
   }
-
   return (
     <div className='product-container'>
-      <div className='content-title'>All Products</div>
+      <div className='content-title'>Favourite</div>
       <div className='content-subTitle'>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores ad
         totam, et alias dolorum harum explicabo, earum saepe est sit commodi
@@ -52,7 +39,7 @@ const Header = () => {
             <HomeOutlined />
           </Breadcrumb.Item>
           <Breadcrumb.Item href='/products'>
-            <span>All Products</span>
+            <span>Favourite</span>
           </Breadcrumb.Item>
         </Breadcrumb>
       </div>
@@ -60,14 +47,14 @@ const Header = () => {
         {isLoading ? (
           <Loading />
         ) : (
-          data.map((items) => {
+          favourite.map((items) => {
             return (
               <div>
                 <div className='products-content__items'>
                   <div className='bg-heart'></div>
                   <i
                     class='bx bx-heart pro-heart '
-                    onClick={() => handleAddFavourite(items)}
+                    onClick={() => handleDeleteFavourite(items)}
                   ></i>
                   <img src={items.images[1]} alt='product.jpg' />
                   <div className='products-content__item'>
@@ -81,7 +68,7 @@ const Header = () => {
 
                     <button
                       className='btn-cart__add'
-                      onClick={() => handleAddCart(items)}
+                      onClick={() => handleaddToCart(items)}
                     >
                       <i class='bx bx-cart-add'></i>
                     </button>

@@ -38,10 +38,29 @@
   width: 300px;
   border-radius: 8px;
   padding: 16px;
+  margin-top: 30px;
 }
 .category-card__image {
   text-align: center;
   position: relative;
+}
+/* .category-card {
+  margin-top: 30px;
+} */
+.category-card__column {
+  display: flex;
+}
+.category-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.category-card__column .category-card__image img {
+  width: 120px;
+  height: 120px;
+}
+.category-info .price-product__moonth {
+  width: 100%;
 }
 .heart {
   position: absolute;
@@ -92,6 +111,7 @@
   display: flex;
   justify-content: center;
   gap: 30px;
+  margin-top: 30px;
 }
 .app-category__item {
   width: 494px;
@@ -110,4 +130,7 @@
   margin-top: 30px;
   width: 200px;
   height: 200px;
+}
+.category-content__item .app-category__items .category-card .card-button {
+  margin-top: 10px !important;
 }

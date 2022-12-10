@@ -1,7 +1,7 @@
 export const reducer = (state, { type, payload }) => {
   switch (type) {
-    case type:
-      return
+    case 'refetch':
+      return { ...state, refetch: payload }
     default:
       return state
   }

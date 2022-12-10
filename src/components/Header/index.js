@@ -1,13 +1,11 @@
 import React from 'react'
 import { Navigation, Pagination, Autoplay, Mousewheel, Keyboard } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Col, Row, Statistic } from 'antd'
-import { countdownValueType } from 'antd/es/statistic/utils'
+import { Col, Statistic } from 'antd'
 
 import './style.css'
 import 'swiper/css'
 import 'swiper/css/navigation'
-// import 'swiper/css/pagination'
 
 const { Countdown } = Statistic
 const deadline = Date.now() + 1000 * 60 * 60 * 24 * 2 + 1000 * 30 // Dayjs is also OK
@@ -24,10 +22,13 @@ const Header = () => {
         <Swiper
           cssMode={true}
           navigation={true}
-          // pagination={true}
           mousewheel={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
           keyboard={true}
-          modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+          modules={[Navigation, Autoplay, Pagination, Mousewheel, Keyboard]}
           className='mySwiper'
         >
           <SwiperSlide>
@@ -59,15 +60,13 @@ const Header = () => {
         </div>
         <Swiper
           cssMode={true}
-          // navigation={true}
-          pagination={true}
           mousewheel={true}
           keyboard={true}
           autoplay={{
             delay: 2500,
             disableOnInteraction: false,
           }}
-          modules={[Navigation, Autoplay, Pagination, Mousewheel, Keyboard]}
+          modules={[Navigation, Autoplay, Mousewheel, Keyboard]}
           className='mySwiper'
         >
           <SwiperSlide>

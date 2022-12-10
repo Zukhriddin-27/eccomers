@@ -14,9 +14,12 @@ import {
   icrProduct,
 } from '../../redux/action/index'
 import { useQuery } from 'react-query'
+import { addToCart } from '../../redux/action/cartAction'
+import { deleteFromCart } from '../../redux/action/cartAction'
 
 const ProductsItem = () => {
-  const state = useSelector((state) => state.handleCart)
+  const { cart } = useSelector((state) => state.cart)
+  console.log(cart)
   // const [data, setData] = useState({})
   // const [isLoading, setIsLoading] = useState(false)
   const dispatch = useDispatch()
@@ -25,7 +28,6 @@ const ProductsItem = () => {
   const { search } = useLocation()
   const [cartBtn, setCartBtn] = useState('Add to Cart')
   const [addCount, setAddCount] = useState(false)
-  console.log(search)
 
   const { isLoading, error, data } = useQuery('repoData', () =>
     fetch(`https://api.escuelajs.co/api/v1/products/${id}`).then((res) =>
@@ -35,25 +37,28 @@ const ProductsItem = () => {
 
   if (error) return 'An error has occurred: ' + error.message
 
-  const addToCart = (product) => {
+  const handleAddCart = (product) => {
     if (cartBtn === 'Add to Cart') {
-      dispatch(addItem(product))
+      dispatch(addToCart(product))
       setAddCount(true)
       setCartBtn('Remove from Cart')
     } else {
-      dispatch(dellItem(product))
+      dispatch(deleteFromCart(product))
       setAddCount(false)
       setCartBtn('Add to Cart')
     }
   }
-  const icrProductItem = (product) => {
-    dispatch(icrProduct(product))
-  }
-  const decrProductItem = (product) => {
-    dispatch(decrProduct(product))
-  }
+  // const icrProductItem = (product) => {
+  //   dispatch(icrProduct(product))
+  // }
+  // const decrProductItem = (product) => {
+  //   dispatch(decrProduct(product))
+  // }
   const dellProductItem = (product) => {
-    dispatch(dellItem(product))
+    dispatch(deleteFromCart(product))
+    setAddCount(false)
+
+    setCartBtn('Add to Cart')
   }
 
   return (
@@ -85,10 +90,10 @@ const ProductsItem = () => {
             <div className='products-item-container'>
               <div className='products-item__content'>
                 {/* eslint-disable-next-line */}
-                {/* <img
-                  src={!data?.images[0] || 'No'}
+                <img
+                  // src={data?.images[0] || 0}
                   alt={data?.title || 'No name'}
-                /> */}
+                />
               </div>
               <div className='products-item__content'>
                 <div className='product-item__title'>
@@ -116,20 +121,19 @@ const ProductsItem = () => {
                 <div className={addCount ? 'product-quantity' : 'show-cart '}>
                   <p>Quantity</p>
                   <div className='product-item__count'>
-                    <button onClick={() => decrProductItem(data)}>-</button>
-                    {state.map((value) => (
-                      <div className='product-item__qty' key={value?.id}>
-                        {value?.qty !== true ? value?.qty : '0'}
-                      </div>
-                    ))}
+                    <button>-</button>
 
-                    <button onClick={() => icrProductItem(data)}>+</button>
+                    <div className='product-item__qty'>
+                      {cart.map((item) => item.count)}
+                    </div>
+
+                    <button>+</button>
                     <button onClick={() => dellProductItem(data)}>
                       <i className='bx bxs-trash'></i>
                     </button>
                   </div>
                 </div>
-                <button className='btn' onClick={() => addToCart(data)}>
+                <button className='btn' onClick={() => handleAddCart(data)}>
                   {cartBtn}
                 </button>
                 <div className='payment-type'>

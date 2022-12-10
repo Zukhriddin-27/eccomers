@@ -29,6 +29,21 @@ const CategoryItems = () => {
                 <button className='cart-btn'>Muddatli to'lov</button>
               </div>
             </div>
+            <div className='category-card'>
+              <div className='category-card__column'>
+                <div className='category-card__image'>
+                  <img
+                    src='https://olcha.uz/image/220x220/products/7auI1gNuna59uO9BHlEKrpeE331EagMB8DxHIseJpynkrfcFLU03dlvEked0.jpeg'
+                    alt='apple.jpeg'
+                  />
+                </div>
+                <div className='category-info'>
+                  <h3>Apple iPad mini 6 Wi-Fi (2021) 256 GB Starlight</h3>
+                  <p className='price-product'>$800.000</p>
+                  <p className='price-product__moonth'>$100 x 12 moonth</p>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className='category-content__item'>
@@ -50,6 +65,58 @@ const CategoryItems = () => {
                   <i class='bx bx-heart heart '></i>
                 </div>
                 <div>
+                  <h3>Apple Watch Series 8 45mm Silver</h3>
+                  <p className='price-product'>$800.000</p>
+                  <p className='price-product__moonth'>$100 x 12 moonth</p>
+                  <div className='cart-button'>
+                    <i class='bx bxs-cart-add'></i>
+                    <button className='cart-btn'>Muddatli to'lov</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className='category-content__item'>
+              <div className='app-category__items'>
+                <div className='category-card'>
+                  <div className='category-card__image'>
+                    <img
+                      src='https://olcha.uz/image/220x220/products/OFLhO6OVhfJouvlaoWm6d0qp0Mbr8V0CKkbj04dWsVnIfqcKtdJ8ACRGPxQO.'
+                      alt='apple.jpeg'
+                    />
+                    <i class='bx bx-heart heart'></i>
+                  </div>
+                  <h3>Apple iPad mini 6 Wi-Fi (2021) 256 GB Starlight</h3>
+                  <p className='price-product'>$800.000</p>
+                  <p className='price-product__moonth'>$100 x 12 moonth</p>
+                  <div className='cart-button'>
+                    <i class='bx bxs-cart-add'></i>
+                    <button className='cart-btn'>Muddatli to'lov</button>
+                  </div>
+                </div>
+                <div className='category-card'>
+                  <div className='category-card__image'>
+                    <img
+                      src='https://olcha.uz/image/220x220/products/OFLhO6OVhfJouvlaoWm6d0qp0Mbr8V0CKkbj04dWsVnIfqcKtdJ8ACRGPxQO.'
+                      alt='apple.jpeg'
+                    />
+                    <i class='bx bx-heart heart'></i>
+                  </div>
+                  <h3>Apple iPad mini 6 Wi-Fi (2021) 256 GB Starlight</h3>
+                  <p className='price-product'>$800.000</p>
+                  <p className='price-product__moonth'>$100 x 12 moonth</p>
+                  <div className='cart-button'>
+                    <i class='bx bxs-cart-add'></i>
+                    <button className='cart-btn'>Muddatli to'lov</button>
+                  </div>
+                </div>
+                <div className='category-card'>
+                  <div className='category-card__image'>
+                    <img
+                      src='https://olcha.uz/image/220x220/products/OFLhO6OVhfJouvlaoWm6d0qp0Mbr8V0CKkbj04dWsVnIfqcKtdJ8ACRGPxQO.'
+                      alt='apple.jpeg'
+                    />
+                    <i class='bx bx-heart heart'></i>
+                  </div>
                   <h3>Apple iPad mini 6 Wi-Fi (2021) 256 GB Starlight</h3>
                   <p className='price-product'>$800.000</p>
                   <p className='price-product__moonth'>$100 x 12 moonth</p>

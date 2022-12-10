@@ -3,12 +3,14 @@ import { Radio, Space, Tabs } from 'antd'
 import './style.css'
 const catalog = [
   {
-    label: 'Televizor, vedio, audio',
+    label: 'Furniture',
     key: '1',
     children: (
       <div className='catalog'>
         <div className='catalog-items'>
-          <p className='catalog-title'>Televizor</p>
+          <a href='/category/Furniture' className='catalog-title'>
+            Furniture
+          </a>
           <p>Sony</p>
           <p>Samsung</p>
           <p>Apple</p>
@@ -53,12 +55,14 @@ const catalog = [
     ),
   },
   {
-    label: 'Televizor, vedio, audio',
+    label: 'Shoes',
     key: '2',
     children: (
       <div className='catalog'>
         <div className='catalog-items'>
-          <p className='catalog-title'>Televizor</p>
+          <a href='/category/Shoes' className='catalog-title'>
+            Shoes
+          </a>
           <p>Sony</p>
           <p>Samsung</p>
           <p>Apple</p>
@@ -91,12 +95,14 @@ const catalog = [
     ),
   },
   {
-    label: 'Notebook, printer, PC kompyuter ',
+    label: 'Others ',
     key: '3',
     children: (
       <div className='catalog'>
         <div className='catalog-items'>
-          <p className='catalog-title'>Televizor</p>
+          <a href='/category/Others' className='catalog-title'>
+            Others
+          </a>
           <p>Sony</p>
           <p>Samsung</p>
           <p>Apple</p>

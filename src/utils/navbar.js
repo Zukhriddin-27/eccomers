@@ -2,7 +2,7 @@ import React from 'react'
 import AuthPage from '../page/Auth'
 import CartPage from '../page/Cart'
 import CategoryProductsPage from '../page/CategoryProduct'
-
+import Favourite from '../page/Favourite'
 const Home = React.lazy(() => import('../page/Home'))
 const Products = React.lazy(() => import('../page/Products'))
 const ProductItemPage = React.lazy(() => import('../page/ProductsItems'))
@@ -48,7 +48,7 @@ export const navbar = [
     id: 4,
     element: <CategoryProductsPage />,
     title: 'Products',
-    path: '/category/:category',
+    path: '/categories/:id',
     private: false,
     hidden: true,
   },
@@ -65,6 +65,14 @@ export const navbar = [
     element: <AuthPage />,
     title: 'Create User',
     path: '/register',
+    private: false,
+    hidden: true,
+  },
+  {
+    id: 7,
+    element: <Favourite />,
+    title: 'Favourite',
+    path: '/favourite',
     private: false,
     hidden: true,
   },
