@@ -1,35 +1,27 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useLocation, useParams } from 'react-router-dom'
-import { Rate, Tabs } from 'antd'
+import { useParams } from 'react-router-dom'
+import { Rate, Skeleton, Space, Tabs } from 'antd'
 
 import './style.css'
 import { HomeOutlined } from '@ant-design/icons'
 import { Breadcrumb } from 'antd'
 import Loading from '../Loading'
-import {
-  addItem,
-  decrProduct,
-  dellItem,
-  icrProduct,
-} from '../../redux/action/index'
 import { useQuery } from 'react-query'
-import { addToCart } from '../../redux/action/cartAction'
+import { addToCart, decrCart, incerCart } from '../../redux/action/cartAction'
 import { deleteFromCart } from '../../redux/action/cartAction'
-
+import ProductsItemImage from '../ProductsItemImage'
+import { DotChartOutlined } from '@ant-design/icons'
 const ProductsItem = () => {
   const { cart } = useSelector((state) => state.cart)
   console.log(cart)
-  // const [data, setData] = useState({})
-  // const [isLoading, setIsLoading] = useState(false)
   const dispatch = useDispatch()
   const { id } = useParams()
-  console.log(id)
-  const { search } = useLocation()
+  // const [active, setActive] = useState(false)
   const [cartBtn, setCartBtn] = useState('Add to Cart')
   const [addCount, setAddCount] = useState(false)
 
-  const { isLoading, error, data } = useQuery('repoData', () =>
+  const { isLoading, error, data } = useQuery(['repoData', id], () =>
     fetch(`https://api.escuelajs.co/api/v1/products/${id}`).then((res) =>
       res.json()
     )
@@ -48,16 +40,18 @@ const ProductsItem = () => {
       setCartBtn('Add to Cart')
     }
   }
-  // const icrProductItem = (product) => {
-  //   dispatch(icrProduct(product))
-  // }
-  // const decrProductItem = (product) => {
-  //   dispatch(decrProduct(product))
-  // }
+  const icrProductItem = (product) => {
+    dispatch(incerCart(product))
+  }
+  const decrProductItem = (product) => {
+    dispatch(decrCart(product))
+    product.preventDefault()
+
+    setAddCount(true)
+  }
   const dellProductItem = (product) => {
     dispatch(deleteFromCart(product))
     setAddCount(false)
-
     setCartBtn('Add to Cart')
   }
 
@@ -78,7 +72,7 @@ const ProductsItem = () => {
               <Breadcrumb.Item href='/home'>
                 <HomeOutlined />
               </Breadcrumb.Item>
-              <Breadcrumb.Item href='/products'>
+              <Breadcrumb.Item href={`/categories/${data?.category?.id}`}>
                 <span>{data?.category?.name || 'No name'}</span>
               </Breadcrumb.Item>
               <Breadcrumb.Item href='/products'>
@@ -90,10 +84,8 @@ const ProductsItem = () => {
             <div className='products-item-container'>
               <div className='products-item__content'>
                 {/* eslint-disable-next-line */}
-                <img
-                  // src={data?.images[0] || 0}
-                  alt={data?.title || 'No name'}
-                />
+
+                <ProductsItemImage img={data?.images} />
               </div>
               <div className='products-item__content'>
                 <div className='product-item__title'>
@@ -121,13 +113,15 @@ const ProductsItem = () => {
                 <div className={addCount ? 'product-quantity' : 'show-cart '}>
                   <p>Quantity</p>
                   <div className='product-item__count'>
-                    <button>-</button>
+                    <button onClick={() => decrProductItem(data)}>-</button>
 
                     <div className='product-item__qty'>
-                      {cart.map((item) => item.count)}
+                      {cart.map((item) =>
+                        item?.id === data.id ? item.count : null
+                      )}
                     </div>
 
-                    <button>+</button>
+                    <button onClick={() => icrProductItem(data)}>+</button>
                     <button onClick={() => dellProductItem(data)}>
                       <i className='bx bxs-trash'></i>
                     </button>

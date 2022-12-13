@@ -1,27 +1,17 @@
 import React, { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import './style.css'
 import { HomeOutlined } from '@ant-design/icons'
 import { Breadcrumb } from 'antd'
 import Loading from '../Loading'
-import { addToFavourite } from '../../redux/action/favouriteActions'
-import { addToCart } from '../../redux/action/cartAction'
+import CartProduct from '../CartProduct'
 
 const Header = () => {
   const [data, setData] = useState([])
   const [isLoading, setIsLoading] = useState(false)
-  const dispatch = useDispatch()
   const { search } = useLocation()
-  console.log(search)
-  const navigate = useNavigate()
 
-  const handleAddCart = (product) => {
-    dispatch(addToCart(product))
-  }
-  const handleAddFavourite = (favourite) => {
-    dispatch(addToFavourite(favourite))
-  }
+  // const favoLocal = JSON.parse(localStorage.getItem('favourite'))
 
   useEffect(() => {
     setIsLoading(true)
@@ -33,10 +23,6 @@ const Header = () => {
         setIsLoading(false)
       })
   }, [search])
-
-  const onSelect = (id) => {
-    navigate(`/products/${id}`)
-  }
 
   return (
     <div className='product-container'>
@@ -60,39 +46,15 @@ const Header = () => {
         {isLoading ? (
           <Loading />
         ) : (
-          data.map((items) => {
+          data?.map((items) => {
             return (
-              <div>
-                <div className='products-content__items'>
-                  <div className='bg-heart'></div>
-                  <i
-                    class='bx bx-heart pro-heart '
-                    onClick={() => handleAddFavourite(items)}
-                  ></i>
-                  <img src={items.images[1]} alt='product.jpg' />
-                  <div className='products-content__item'>
-                    <p
-                      className='product-title'
-                      onClick={() => onSelect(items.id)}
-                    >
-                      {items.title}
-                    </p>
-                    <p className='product-price'>${items.price}</p>
-
-                    <button
-                      className='btn-cart__add'
-                      onClick={() => handleAddCart(items)}
-                    >
-                      <i class='bx bx-cart-add'></i>
-                    </button>
-                  </div>
-                </div>
+              <div className='products-content__items'>
+                <CartProduct data={items} />
               </div>
             )
           })
         )}
       </div>
-      {/* <Pagination defaultCurrent={1} total={200} />; */}
     </div>
   )
 }

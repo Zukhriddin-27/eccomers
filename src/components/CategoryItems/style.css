@@ -19,13 +19,16 @@
   color: #ffb32f;
   font-size: 16px;
 }
+.all-products a {
+  color: #ffb32f;
+}
 .all-products:hover {
   opacity: 0.7;
 }
 .category-content__items {
   display: flex;
   gap: 30px;
-  padding: 30px 0;
+  /* padding: 30px 0; */
 }
 .category-content__item {
   display: flex;

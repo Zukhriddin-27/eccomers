@@ -13,7 +13,7 @@ export const addToFavourite = (product) => async (dispatch) => {
   if (dublicates.length === 0) {
     const productToAdd = {
       ...product,
-      count: 1,
+      favourite: 1,
     }
     favourite.push(productToAdd)
 

@@ -1,4 +1,9 @@
-import { ADD_TO_CART, DELETE_FROM_CART } from '../constants/cartConstant'
+import {
+  ADD_TO_CART,
+  DECREMENT_FROM_CART,
+  DELETE_FROM_CART,
+  INCREMENT_TO_CART,
+} from '../constants/cartConstant'
 
 let INITIAL_STATE = {
   cart: [],
@@ -17,6 +22,15 @@ const cartReducer = (state = INITIAL_STATE, action) => {
         cart: [...action.payload],
       }
     case DELETE_FROM_CART:
+      return {
+        cart: [...action.payload],
+      }
+
+    case DECREMENT_FROM_CART:
+      return {
+        cart: [...action.paylaod],
+      }
+    case INCREMENT_TO_CART:
       return {
         cart: [...action.payload],
       }

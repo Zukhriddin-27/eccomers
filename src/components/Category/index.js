@@ -37,7 +37,7 @@ const Category = () => {
           modules={[FreeMode, Navigation, Pagination]}
           className='mySwiper'
         >
-          {data.map((value) => {
+          {data?.map((value) => {
             return (
               <SwiperSlide>
                 <div

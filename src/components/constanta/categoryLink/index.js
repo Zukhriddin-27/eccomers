@@ -8,7 +8,7 @@ const catalog = [
     children: (
       <div className='catalog'>
         <div className='catalog-items'>
-          <a href='/category/Furniture' className='catalog-title'>
+          <a href='/categories/3' className='catalog-title'>
             Furniture
           </a>
           <p>Sony</p>
@@ -60,7 +60,7 @@ const catalog = [
     children: (
       <div className='catalog'>
         <div className='catalog-items'>
-          <a href='/category/Shoes' className='catalog-title'>
+          <a href='/categories/4' className='catalog-title'>
             Shoes
           </a>
           <p>Sony</p>
@@ -100,7 +100,7 @@ const catalog = [
     children: (
       <div className='catalog'>
         <div className='catalog-items'>
-          <a href='/category/Others' className='catalog-title'>
+          <a href='/categories/5' className='catalog-title'>
             Others
           </a>
           <p>Sony</p>

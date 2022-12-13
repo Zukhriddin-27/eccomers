@@ -62,26 +62,3 @@
 .btn-cart__add .bx {
   margin-left: 5px;
 }
-
-.product-add__remove {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  position: absolute;
-  right: 5px;
-  bottom: 5px;
-  border: 1px solid rgb(241, 196, 62);
-  width: 80px;
-  height: 30px;
-  font-size: 20px;
-
-  border-radius: 8px;
-}
-.product-add {
-  padding: 2px 4px;
-  cursor: pointer;
-}
-.product-remove {
-  padding: 2px 4px;
-  cursor: pointer;
-}

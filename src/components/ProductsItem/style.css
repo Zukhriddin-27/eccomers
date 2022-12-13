@@ -9,8 +9,8 @@
 }
 .products-item-container {
   display: flex;
-  justify-content: center;
-  gap: 80px;
+  justify-content: space-between;
+  gap: 30px;
   margin: 60px 0;
 }
 .product-image {

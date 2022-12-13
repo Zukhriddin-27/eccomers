@@ -7,7 +7,7 @@ const CategoryItems = () => {
         <div className='category-content'>
           <h1 className='category-content__title'>Apple Products</h1>
           <div className='all-products'>
-            <p>Barchasini ko'rish</p>
+            <a href='/products'>Barchasini ko'rish</a>
             <i class='bx bx-chevron-right'></i>
           </div>
         </div>

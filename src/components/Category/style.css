@@ -29,3 +29,9 @@
   margin-top: 10px;
   text-transform: capitalize;
 }
+
+.content-category .swiper-button-next,
+.content-category .swiper-button-prev {
+  position: absolute;
+  top: 35% !important;
+}

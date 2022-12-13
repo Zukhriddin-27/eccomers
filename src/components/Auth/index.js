@@ -2,22 +2,18 @@ import { message } from 'antd'
 import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import useRequest from '../../hooks/useRequest'
 import './style.css'
 const Auth = () => {
   const [isHidden, setIsHidden] = useState(true)
   const [body, setBody] = useState({})
   const navigate = useNavigate()
-  const [regName, setRegName] = useState('')
-  const [regPassword, setRegPassword] = useState('')
-  const [regEmail, setRegEmail] = useState('')
-  const [regAvatar, setRegAvatar] = useState('')
+  const request = useRequest()
+
   const [logEmail, setLogEmail] = useState('')
   const [logPassword, setLogPassword] = useState('')
-  const [url, setUrl] = useState(
-    'https://res.cloudinary.com/dus2bqcc6/image/upload/v1659189677/photo_2022-07-30_19.01.08_qtdu0q.jpg'
-  )
 
-  const handleChange = ({ target: { value, name } }) => {
+  const handleReg = ({ target: { value, name } }) => {
     setBody({
       ...body,
       [name]: value,
@@ -33,84 +29,79 @@ const Auth = () => {
     message.info('Succesfully Logged')
   }
   console.log(body)
-  // const onSubmit =  () => {
-  //   try {
-  //     fetch(`https://api.escuelajs.co/api/v1/users`, {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application-json',
-  //       },
-  //       body: JSON.stringify(body),
-  //     }).then((res) => {
-  //       console.log(res)
-  //       info()
-  //       navigate('/home')
-  //     })
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
-  // }
-  const ourFields = () => {
-    // eslint-disable-next-line
-    if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(regEmail)) {
-      info()
-      return
-    }
-    fetch('https://api.escuelajs.co/api/v1/users', {
+  const onSubmit = async () => {
+    request({
+      url: '/users',
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        name: regName,
-        email: regEmail,
-        password: regPassword,
-        avatar: url,
-      }),
+      body,
+    }).then((res) => {
+      console.log(res)
+      info()
+      navigate('/home')
     })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.error) {
-          info()
-        } else {
-          info()
-          setIsHidden(!isHidden)
-        }
-      })
-      .catch((err) => console.log(err))
   }
 
-  const logData = () => {
-    // eslint-disable-next-line
-    if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(logEmail)) {
-      info()
-      return
-    }
-    fetch('https://api.escuelajs.co/api/v1/auth/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        email: logEmail,
-        password: logPassword,
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.error) {
-          info()
-        } else {
-          localStorage.setItem('rolex', data.token)
-          localStorage.setItem('user', JSON.stringify(data.user))
-          info()
-          navigate('/home')
-        }
-      })
-      .catch((err) => {
-        console.log(err)
-      })
-  }
+  // const ourFields = () => {
+  //   // eslint-disable-next-line
+  //   if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(regEmail)) {
+  //     info()
+  //     return
+  //   }
+  //   fetch('https://api.escuelajs.co/api/v1/users', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify({
+  //       name: regName,
+  //       email: regEmail,
+  //       password: regPassword,
+  //       avatar: url,
+  //     }),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       if (data.error) {
+  //         info()
+  //       } else {
+  //         info()
+  //         setIsHidden(!isHidden)
+  //       }
+  //     })
+  //     .catch((err) => console.log(err))
+  // }
+
+  // const logData = () => {
+  //   // eslint-disable-next-line
+  //   if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(logEmail)) {
+  //     info()
+  //     return
+  //   }
+  //   fetch('https://api.escuelajs.co/api/v1/auth/login', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify({
+  //       email: logEmail,
+  //       password: logPassword,
+  //     }),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       if (data.error) {
+  //         info()
+  //       } else {
+  //         localStorage.setItem('rolex', data.token)
+  //         localStorage.setItem('user', JSON.stringify(data.user))
+  //         info()
+  //         navigate('/home')
+  //       }
+  //     })
+  //     .catch((err) => {
+  //       console.log(err)
+  //     })
+  // }
   return (
     <div className='auth'>
       <div class='main'>
@@ -131,43 +122,35 @@ const Auth = () => {
             </div>
             <span class='form__span'>or use email for registration</span>
             <input
+              onChange={handleReg}
               class='form__input'
               type='text'
               name='name'
               placeholder='Name'
-              value={regName}
-              onChange={(e) => setRegName(e.target.value)}
             />
             <input
+              onChange={handleReg}
               class='form__input'
               type='text'
               name='email'
               placeholder='Email'
-              value={regEmail}
-              onChange={(e) => setRegEmail(e.target.value)}
             />
             <input
+              onChange={handleReg}
               class='form__input'
               type='text'
               name='avatar'
-              value={regAvatar}
-              onChange={(e) => setRegAvatar(e.target.value)}
               placeholder='avatar'
             />
 
             <input
+              onChange={handleReg}
               class='form__input'
               type='password'
               name='password'
-              value={regPassword}
-              onChange={(e) => setRegPassword(e.target.value)}
               placeholder='Password'
             />
-            <button
-              type='submit'
-              class='form__button auth-button submit'
-              onClick={() => ourFields()}
-            >
+            <button class='form__button auth-button submit' onClick={onSubmit}>
               SIGN UP
             </button>
           </form>
@@ -209,7 +192,7 @@ const Auth = () => {
             <button
               class='form__button auth-button submit'
               type='submit'
-              onClick={() => logData()}
+              // onClick={() => logData()}
             >
               SIGN IN
             </button>

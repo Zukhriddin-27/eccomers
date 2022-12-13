@@ -3,6 +3,7 @@ import Category from '../Category'
 import Header from '../Header'
 import CategoryItems from '../CategoryItems'
 import './style.css'
+import Brend from '../Brend'
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
         <Category />
       </div>
       <CategoryItems />
+      <Brend />
       <div className='container'></div>
     </>
   )

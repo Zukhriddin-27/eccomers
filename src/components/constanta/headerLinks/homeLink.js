@@ -21,7 +21,7 @@ const menu = (
     <div className='content-home__items'>
       <ul>
         <li>
-          <a href='#'>sign in/sign up</a>
+          <a href='/register'>sign in/sign up</a>
         </li>
         <li>
           <a href='#'>My account</a>

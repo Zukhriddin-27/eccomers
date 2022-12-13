@@ -8,8 +8,13 @@ import catalog from '../constanta/categoryLink'
 import './navbar.css'
 import useSearch from '../../hooks/useSearch'
 import { uzeReplace } from '../../hooks/useReplace.js'
-import { deleteFromCart, incerCart } from '../../redux/action/cartAction'
+import {
+  decrCart,
+  deleteFromCart,
+  incerCart,
+} from '../../redux/action/cartAction'
 import Filter from '../Filter'
+import Footer from '../Footer'
 
 const Navbar = () => {
   const { cart } = useSelector((state) => state.cart)
@@ -19,7 +24,6 @@ const Navbar = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const location = useLocation()
-  const query = useSearch()
 
   const handleSearch = ({ target: { name, value } }) => {
     navigate(`${location?.pathname}${uzeReplace(name, value)}`)
@@ -30,18 +34,19 @@ const Navbar = () => {
     dispatch(deleteFromCart(product))
   }
 
-  // const handleIncrCart = (item) => {
-  //   dispatch(incerCart(item))
-  // }
+  const handleIncrCart = (item) => {
+    dispatch(incerCart(item))
+  }
 
-  // const handleDecrCart = (item) => {
-  //   dispatch(decrProduct(item))
-  // }
+  const handleDecrCart = (item) => {
+    dispatch(decrCart(item))
+  }
 
   let total = 0
   const itemTotal = (item) => {
-    total = parseFloat(total) + parseFloat(item?.price * item?.qty)
+    total = parseFloat(total) + parseFloat(item?.price * item?.count)
   }
+
   const toCart = () => {
     navigate('/products')
     setIscard(false)
@@ -153,14 +158,14 @@ const Navbar = () => {
                       <div className='cart-content__count'>
                         <button
                           className='btn-icr'
-                          // onClick={() => handleIncrCart(items)}
+                          onClick={() => handleIncrCart(items)}
                         >
                           +
                         </button>
                         <p className='count'>{items?.count || 0}</p>
                         <button
                           className='btn-decr'
-                          // onClick={() => handleDecrCart(items)}
+                          onClick={() => handleDecrCart(items)}
                         >
                           -
                         </button>
@@ -185,7 +190,7 @@ const Navbar = () => {
             <div className='all-products__price'>
               <div className='product-length'>{cart.length} items </div>
               {cart.map(itemTotal)}
-              <div className='all-product__price'>${'total'}</div>
+              <div className='all-product__price'>${total}</div>
             </div>
             <button className='check' onClick={() => toCart()}>
               Proceed To Checkout
@@ -194,6 +199,7 @@ const Navbar = () => {
         ) : null}
       </div>
       <Outlet />
+      <Footer />
     </div>
   )
 }
