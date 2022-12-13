@@ -55,7 +55,7 @@ export const incerCart = (product) => async (dispatch) => {
     ]
   }
   localStorage.setItem('cart', JSON.stringify(cartCount))
-  // window.location.reload()
+  window.location.reload()
 }
 
 export const decrCart = (product) => async (dispatch) => {
@@ -67,7 +67,7 @@ export const decrCart = (product) => async (dispatch) => {
   if (incr) {
     incr.count = incr.count -= 1
     if (incr.count <= 0) {
-      incr.count = 0
+      incr.count = 1
     }
   } else {
     return [
@@ -78,5 +78,5 @@ export const decrCart = (product) => async (dispatch) => {
     ]
   }
   localStorage.setItem('cart', JSON.stringify(cartCount))
-  // window.location.reload()
+  window.location.reload()
 }

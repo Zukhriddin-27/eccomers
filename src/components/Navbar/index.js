@@ -36,10 +36,12 @@ const Navbar = () => {
 
   const handleIncrCart = (item) => {
     dispatch(incerCart(item))
+    item.preventDefault()
   }
 
   const handleDecrCart = (item) => {
     dispatch(decrCart(item))
+    item.preventDefault()
   }
 
   let total = 0
