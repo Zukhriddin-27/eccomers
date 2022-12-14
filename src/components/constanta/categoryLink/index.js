@@ -1,15 +1,18 @@
 import React, { useState } from 'react'
-import { Radio, Space, Tabs } from 'antd'
+import { Dropdown, Tabs } from 'antd'
 import './style.css'
+import { UnorderedListOutlined, CloseOutlined } from '@ant-design/icons'
+import { useQuery } from 'react-query'
+
 const catalog = [
   {
-    label: 'Furniture',
+    label: 'Electronics',
     key: '1',
     children: (
       <div className='catalog'>
         <div className='catalog-items'>
-          <a href='/categories/3' className='catalog-title'>
-            Furniture
+          <a href='/category/electronics' className='catalog-title'>
+            Electronics
           </a>
           <p>Sony</p>
           <p>Samsung</p>
@@ -55,13 +58,13 @@ const catalog = [
     ),
   },
   {
-    label: 'Shoes',
+    label: 'Jewelery',
     key: '2',
     children: (
       <div className='catalog'>
         <div className='catalog-items'>
-          <a href='/categories/4' className='catalog-title'>
-            Shoes
+          <a href='/category/jewelery' className='catalog-title'>
+            Jewelery
           </a>
           <p>Sony</p>
           <p>Samsung</p>
@@ -95,13 +98,13 @@ const catalog = [
     ),
   },
   {
-    label: 'Others ',
+    label: `Men's clothing `,
     key: '3',
     children: (
       <div className='catalog'>
         <div className='catalog-items'>
-          <a href='/categories/5' className='catalog-title'>
-            Others
+          <a href={`/category/men's clothing`} className='catalog-title'>
+            Men's clothing
           </a>
           <p>Sony</p>
           <p>Samsung</p>
@@ -135,12 +138,14 @@ const catalog = [
     ),
   },
   {
-    label: 'Smatfon, Telefon',
+    label: `Women's clothing`,
     key: '4',
     children: (
       <div className='catalog'>
         <div className='catalog-items'>
-          <p className='catalog-title'>Televizor</p>
+          <a href={`/category/women's clothing`} className='catalog-title'>
+            Women's clothing
+          </a>
           <p>Sony</p>
           <p>Samsung</p>
           <p>Apple</p>
@@ -364,17 +369,36 @@ const catalog = [
   },
 ]
 
-// const [tabPosition, setTabPosition] = useState('left');
-// const changeTabPosition = (e) => {
-//   setTabPosition(e.target.value);
-// };
+const Catalog = () => {
+  const [isCatalog, setIsCatalog] = useState(false)
 
-const CatalogLink = (
-  <div className='catalog-container'>
-    <>
-      <Tabs tabPosition={'left'} items={catalog} />
-    </>
-  </div>
-)
+  const { isLoading, error, data } = useQuery('repoData', () =>
+    fetch('https://fakestoreapi.com/products/categories').then((res) =>
+      res.json()
+    )
+  )
+  const CatalogLink = (
+    <div className='catalog-container'>
+      <>
+        <Tabs tabPosition={'left'} items={catalog} />
+      </>
+    </div>
+  )
 
-export default CatalogLink
+  return (
+    <Dropdown
+      overlay={CatalogLink}
+      placement='bottomRight'
+      icon
+      arrow={{ pointAtCenter: false }}
+      trigger='click'
+    >
+      <div onClick={() => setIsCatalog(!isCatalog)} className='brand-name'>
+        {!isCatalog ? <UnorderedListOutlined /> : <CloseOutlined />}
+        <h4>Katalog</h4>
+      </div>
+    </Dropdown>
+  )
+}
+
+export default Catalog

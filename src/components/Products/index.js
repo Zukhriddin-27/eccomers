@@ -15,7 +15,7 @@ const Header = () => {
 
   useEffect(() => {
     setIsLoading(true)
-    fetch(`https://api.escuelajs.co/api/v1/products${search}
+    fetch(`https://fakestoreapi.com/products${search}
     `)
       .then((res) => res.json())
       .then((res) => {
@@ -47,11 +47,7 @@ const Header = () => {
           <Loading />
         ) : (
           data?.map((items) => {
-            return (
-              <div className='products-content__items'>
-                <CartProduct data={items} />
-              </div>
-            )
+            return <CartProduct data={items} />
           })
         )}
       </div>

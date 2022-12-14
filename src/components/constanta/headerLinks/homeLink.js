@@ -30,7 +30,7 @@ const menu = (
           <a href='#'>My Wishlist</a>
         </li>{' '}
         <li>
-          <a href='#'>My Cart</a>
+          <a href='/cart'>My Cart</a>
         </li>{' '}
         <li>
           <a href='#'>My checkout</a>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import { Rate, Skeleton, Space, Tabs } from 'antd'
+import { Rate, Tabs } from 'antd'
 
 import './style.css'
 import { HomeOutlined } from '@ant-design/icons'
@@ -11,20 +11,15 @@ import { useQuery } from 'react-query'
 import { addToCart, decrCart, incerCart } from '../../redux/action/cartAction'
 import { deleteFromCart } from '../../redux/action/cartAction'
 import ProductsItemImage from '../ProductsItemImage'
-import { DotChartOutlined } from '@ant-design/icons'
 const ProductsItem = () => {
   const { cart } = useSelector((state) => state.cart)
-  console.log(cart)
   const dispatch = useDispatch()
   const { id } = useParams()
-  // const [active, setActive] = useState(false)
   const [cartBtn, setCartBtn] = useState('Add to Cart')
   const [addCount, setAddCount] = useState(false)
 
   const { isLoading, error, data } = useQuery(['repoData', id], () =>
-    fetch(`https://api.escuelajs.co/api/v1/products/${id}`).then((res) =>
-      res.json()
-    )
+    fetch(`https://fakestoreapi.com/products/${id}`).then((res) => res.json())
   )
 
   if (error) return 'An error has occurred: ' + error.message
@@ -72,8 +67,8 @@ const ProductsItem = () => {
               <Breadcrumb.Item href='/home'>
                 <HomeOutlined />
               </Breadcrumb.Item>
-              <Breadcrumb.Item href={`/categories/${data?.category?.id}`}>
-                <span>{data?.category?.name || 'No name'}</span>
+              <Breadcrumb.Item href={`/categories/${data?.category}`}>
+                <span>{data?.category || 'No name'}</span>
               </Breadcrumb.Item>
               <Breadcrumb.Item href='/products'>
                 <span>{data?.title || 'No name'}</span>
@@ -83,9 +78,7 @@ const ProductsItem = () => {
           <div>
             <div className='products-item-container'>
               <div className='products-item__content'>
-                {/* eslint-disable-next-line */}
-
-                <ProductsItemImage img={data?.images} />
+                <ProductsItemImage img={data?.image} />
               </div>
               <div className='products-item__content'>
                 <div className='product-item__title'>
@@ -131,8 +124,11 @@ const ProductsItem = () => {
                   {cartBtn}
                 </button>
                 <div className='payment-type'>
+                  {/* eslint-disable-next-line */}
                   <img src='https://www.zoodmall.com/images/v2/installment_en.png' />
+                  {/* eslint-disable-next-line */}
                   <img src='https://www.zoodmall.com/images/v2/cod_en.png' />
+                  {/* eslint-disable-next-line */}
                   <img src='https://cdn.paycom.uz/merchants/payme_card-p2p.png' />
                 </div>
               </div>

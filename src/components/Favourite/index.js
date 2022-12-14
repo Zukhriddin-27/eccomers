@@ -31,13 +31,7 @@ const Header = () => {
       {favourite?.length !== 0 ? (
         <div className='products-content'>
           {favourite.map((items) => {
-            return (
-              <div>
-                <div className='products-content__items'>
-                  <CartProduct data={items} />
-                </div>
-              </div>
-            )
+            return <CartProduct data={items} />
           })}
         </div>
       ) : (

@@ -42,42 +42,31 @@ const CartProduct = (props) => {
     navigate(`/products/${id}`)
   }
   return (
-    <div className='cart_products'>
-      <div className='bg-heart '></div>
-      <i
-        class={
-          isFavourite ? 'bx bx-heart pro-heart__add' : 'bx bx-heart pro-heart'
-        }
-        onClick={() => handleFavourite(data)}
-      ></i>
-      <div className='products-image'>
-        <img
-          src={data.images[1]}
-          alt='product.jpg'
-          className='products-image'
-        />
-      </div>
-      <div className='products-content__item'>
-        <p className='product-title' onClick={() => onSelect(data?.id)}>
-          {data?.title}
-        </p>
-        <p className='product-price'>${data?.price}</p>
+    <div className='products-content__items'>
+      <div className='cart_products'>
+        <div className='bg-heart '></div>
+        <i
+          class={
+            isFavourite ? 'bx bx-heart pro-heart__add' : 'bx bx-heart pro-heart'
+          }
+          onClick={() => handleFavourite(data)}
+        ></i>
+        <div className='products-image'>
+          <img src={data.image} alt='product.jpg' className='products-image' />
+        </div>
+        <div className='products-content__item'>
+          <p className='product-title' onClick={() => onSelect(data?.id)}>
+            {data?.title}
+          </p>
+          <p className='product-price'>${data?.price}</p>
 
-        <button className='  btn-cart__add' onClick={() => handleAddCart(data)}>
-          <i class={isAdd ? 'bx bx-cart-add cart-add' : 'bx bx-cart-add '}></i>
-        </button>
-        {/* <div className={isAdd ? 'product-add__remove' : 'add_none'}>
           <button
-            className='product-remove'
-            onClick={() => handleDecrCart(data)}
+            className='  btn-cart__add'
+            onClick={() => handleAddCart(data)}
           >
-            -
+            <i class='bx bx-cart-add cart-add'></i>
           </button>
-          <div className='product-count'>{isAdd ? cartCount?.count : 0}</div>
-          <button className='product-add' onClick={() => handleIncrCart(data)}>
-            +
-          </button>
-        </div> */}
+        </div>
       </div>
     </div>
   )

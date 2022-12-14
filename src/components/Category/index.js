@@ -13,17 +13,14 @@ import { useQuery } from 'react-query'
 const Category = () => {
   const navigate = useNavigate()
   const { isLoading, error, data } = useQuery('repoData', () =>
-    fetch('https://api.escuelajs.co/api/v1/categories').then((res) =>
+    fetch('https://fakestoreapi.com/products/categories').then((res) =>
       res.json()
     )
   )
-
   if (isLoading) return 'Loading...'
-
   if (error) return 'An error has occurred: ' + error.message
-  console.log(data)
   const handleLink = (product) => {
-    navigate(`/categories/${product}`)
+    navigate(`/category/${product}`)
   }
 
   return (
@@ -37,47 +34,46 @@ const Category = () => {
           modules={[FreeMode, Navigation, Pagination]}
           className='mySwiper'
         >
-          {data?.map((value) => {
+          {/* {data?.map((value) => {
             return (
               <SwiperSlide>
                 <div
                   className='slider-content'
                   onClick={() => handleLink(value?.id)}
                 >
-                  <img src={value?.image} />
-                  <div className='category-title'>{value?.name}</div>
+                  {category.map((items) => {
+                    return (
+                      // eslint-disable-next-line
+                      <img src={items} />
+                    )
+                  })}
+                  <div className='category-title'>{value}</div>
                 </div>
               </SwiperSlide>
             )
-          })}
+          })} */}
           <SwiperSlide>
-            <div className='slider-content'>
-              <img src='https://olcha.uz/image/256x256/category/QABgOzSh1WTWkoFrE0KbcjWEucVaAwQBJgQjklPAtXaKwjp0v9ZYkF34uVPv.' />
-              <div className='category-title'>Chair</div>
+            <div className='slider-content' onClick={() => handleLink(data[0])}>
+              <img src='https://olcha.uz/image/256x256/category/ZUL8nBr5B3s2XNEX8MYx7lQz52QDpTpOOEf31vUDjN5Zxt0nkHEDuxyNNvuJ.' />
+              <div className='category-title'>{data[0]}</div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className='slider-content'>
-              <img src='https://olcha.uz/image/256x256/category/ANjR66Mftj98kEBx8CWVVnQLdFQuJ4pSr3QKP4n9msN9OAwp25zPtdDyLxi5.' />
-              <div className='category-title'>Notebooks</div>
+            <div className='slider-content' onClick={() => handleLink(data[1])}>
+              <img src='https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg' />
+              <div className='category-title'>{data[1]}</div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className='slider-content'>
-              <img src='https://olcha.uz/image/256x256/category/N3iMWPyvXRIXTqwloVhRb4oe2PEn38unPptNWZVenY7DJS2GYY5py94DRAX6.' />
-              <div className='category-title'>Car details</div>
+            <div className='slider-content' onClick={() => handleLink(data[2])}>
+              <img src='https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg' />
+              <div className='category-title'>{data[2]}</div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className='slider-content'>
-              <img src='https://olcha.uz/image/256x256/category/tS7u52PvR1Zaw3xRLQ0h1zBH9sSevOAQt3FdXmyQ4DfUo8cgruPXuvyyAHmO.' />
-              <div className='category-title'>Home</div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className='slider-content'>
+            <div className='slider-content' onClick={() => handleLink(data[3])}>
               <img src='https://olcha.uz/image/256x256/category/jTPPyG1D9fziqBW0yJXQd3RpyCUSRd6AbthM5l0CRxLFbJhrlxOmcqI48LMZ.' />
-              <div className='category-title'>Clothes</div>
+              <div className='category-title'>{data[3]}</div>
             </div>
           </SwiperSlide>
 

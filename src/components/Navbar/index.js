@@ -15,10 +15,11 @@ import {
 } from '../../redux/action/cartAction'
 import Filter from '../Filter'
 import Footer from '../Footer'
+import { useQuery } from 'react-query'
+import Catalog from '../constanta/categoryLink'
 
 const Navbar = () => {
   const { cart } = useSelector((state) => state.cart)
-  console.log(cart, 'cart')
   const [iscard, setIscard] = useState(false)
   const [isCatalog, setIsCatalog] = useState(false)
   const navigate = useNavigate()
@@ -50,7 +51,7 @@ const Navbar = () => {
   }
 
   const toCart = () => {
-    navigate('/products')
+    navigate('/cart')
     setIscard(false)
   }
   return (
@@ -86,7 +87,8 @@ const Navbar = () => {
             Rolex
           </h2>
           <div>
-            <Dropdown
+            <Catalog />
+            {/* <Dropdown
               overlay={catalog}
               placement='bottomRight'
               icon
@@ -100,7 +102,7 @@ const Navbar = () => {
                 {!isCatalog ? <UnorderedListOutlined /> : <CloseOutlined />}
                 <h4>Katalog</h4>
               </div>
-            </Dropdown>
+            </Dropdown> */}
           </div>
 
           <div className='search-logo'>
@@ -119,7 +121,7 @@ const Navbar = () => {
           })} 
         </div> */}
         <div className='content-item'>
-          <div className='navLink' onClick={() => toCart()}>
+          <div className='navLink' onClick={() => navigate('/products')}>
             <h4>All</h4>
           </div>
           <div className='navlink' onClick={() => navigate('/favourite')}>
@@ -148,7 +150,7 @@ const Navbar = () => {
                   <div className='cart-content'>
                     <div className='cart-content__items'>
                       <img
-                        src={items?.images[1] || 0}
+                        src={items?.image || 0}
                         alt='cart.png'
                         className='cart-image__add'
                       />
@@ -190,11 +192,11 @@ const Navbar = () => {
         {cart.length !== 0 ? (
           <>
             <div className='all-products__price'>
-              <div className='product-length'>{cart.length} items </div>
+              <div className='product-length'>{cart?.length} items </div>
               {cart.map(itemTotal)}
               <div className='all-product__price'>${total}</div>
             </div>
-            <button className='check' onClick={() => toCart()}>
+            <button className='check' onClick={toCart}>
               Proceed To Checkout
             </button>
           </>

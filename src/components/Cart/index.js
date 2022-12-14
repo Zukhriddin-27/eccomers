@@ -1,18 +1,47 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
-import { Breadcrumb, Divider, Input, Select } from 'antd'
+import { useDispatch, useSelector } from 'react-redux'
+import { Breadcrumb, Divider, Empty, Select } from 'antd'
 import { HomeOutlined } from '@ant-design/icons'
 import './style.css'
+import Maps from '../Maps'
+import {
+  decrCart,
+  deleteFromCart,
+  incerCart,
+} from '../../redux/action/cartAction'
 
 const OPTIONS = ['Apples', 'Nails', 'Bananas', 'Helicopters']
 const Cart = () => {
-  const state = useSelector((state) => state.handleCart)
-  console.log(state)
+  const { cart } = useSelector((state) => state.cart)
   const [selectedItems, setSelectedItems] = useState([])
+  const dispatch = useDispatch()
+  const [isAdd, setIsAdd] = useState(false)
 
   const filteredOptions = OPTIONS.filter((o) => !selectedItems.includes(o))
+
+  let total = 0
+  const itemTotal = (value) => {
+    console.log(total)
+    total = parseFloat(total) + parseFloat(value?.price * value?.count)
+  }
+
+  const handledelete = (id) => {
+    dispatch(deleteFromCart(id))
+  }
+  const handleDeleteCart = (e) => {
+    e.preventDefault()
+    localStorage.removeItem('cart')
+    window.location.reload()
+  }
+  const handleDecrCart = (id) => {
+    dispatch(decrCart(id))
+  }
+
+  const handleIncrCart = (id) => {
+    dispatch(incerCart(id))
+  }
   return (
-    <div>
+    <div className='cart-container'>
       <div className='shop-cart__container'>
         <h1>Shopping cart</h1>
         <div className='breadcrumb'>
@@ -29,44 +58,77 @@ const Cart = () => {
       <div className='container'>
         <h2 className='shop-cart__title'>Your cart items</h2>
         <div className='shop-cart__table'>
-          <table>
-            <tr>
-              <th></th>
-              <th>product name</th>
-              <th>price</th>
-              <th>quantity</th>
-              <th>total</th>
-              <th></th>
-            </tr>
+          {cart.length ? (
+            <table>
+              <tr>
+                <th></th>
+                <th>product name</th>
+                <th>price</th>
+                <th>quantity</th>
+                <th>total</th>
+                <th></th>
+              </tr>
 
-            {state.map((value) => {
-              return (
-                <tr>
-                  <td>
-                    <img
-                      src={value.image}
-                      alt='image.jpeg'
-                      className='shop-cart__image'
-                    />{' '}
-                  </td>
-                  <td>{value.title}</td>
-                  <td>${value.price}</td>
-                  <td>{value.qty}</td>
-                  <td>${value.price * value.qty}</td>
-                  <td>
-                    <div className='shop-edit'>
-                      <i class='bx bx-x'></i>
-                      <i class='bx bx-pencil'></i>
-                    </div>
-                  </td>
-                </tr>
-              )
-            })}
-          </table>
+              {cart.map((value) => {
+                return (
+                  <tr>
+                    <td>
+                      {/* eslint-disable-next-line */}
+                      <img
+                        src={value?.image}
+                        alt='image.jpeg'
+                        className='shop-cart__image'
+                      />
+                    </td>
+                    <td>{value?.title}</td>
+                    <td>${value?.price}</td>
+                    <td>
+                      {!isAdd ? (
+                        value.count
+                      ) : (
+                        <div className='edit-cart__products'>
+                          <button
+                            className='product-remove'
+                            onClick={() => handleDecrCart(value)}
+                          >
+                            -
+                          </button>
+                          <div className='product-count'>{value?.count}</div>
+                          <button
+                            className='product-add'
+                            onClick={() => handleIncrCart(value)}
+                          >
+                            +
+                          </button>
+                        </div>
+                      )}
+                    </td>
+                    <td>${value?.price * value.count}</td>
+                    <td>
+                      <div className='shop-edit'>
+                        <i
+                          class='bx bx-x'
+                          onClick={() => handledelete(value)}
+                        ></i>
+                        <i
+                          class='bx bx-pencil'
+                          onClick={() => setIsAdd(!isAdd)}
+                        ></i>
+                      </div>
+                    </td>
+                  </tr>
+                )
+              })}
+            </table>
+          ) : (
+            <Empty />
+          )}
         </div>
         <div className='shop-cart__buttons'>
           <div>
-            <button className='shop-clear'>clear shopping cart</button>
+            <button className='shop-clear' onClick={handleDeleteCart}>
+              clear shopping cart
+            </button>
             <button className='shop-cart'>update shopping cart</button>
           </div>
           <button>continue shopping</button>
@@ -76,16 +138,6 @@ const Cart = () => {
             <div className='shop-input__item'>
               <h1>Calculate shipping </h1>
               <Divider />
-              <Select
-                placeholder='Inserted are removed'
-                value={selectedItems}
-                onChange={setSelectedItems}
-                style={{ width: '100%', height: '50px' }}
-                options={filteredOptions.map((item) => ({
-                  value: item,
-                  label: item,
-                }))}
-              />
 
               <input placeholder='State/Country' />
               <input placeholder='Postcode/Zip' />
@@ -103,15 +155,19 @@ const Cart = () => {
             </div>
           </div>
           <div className='shop-total'>
-            <h4>sub total: $220.10</h4>
+            {cart.map(itemTotal)}
+            <h4>sub total: $ {total}</h4>
             <h2>
-              Grand total: <span>$220.10</span>{' '}
+              Grand total: <span>${total} </span>{' '}
             </h2>
             <Divider />
-            <button>Proceed to checkout </button>
+            <button className='check-btn'>Proceed to checkout </button>
             <p>Checkout with Mutilple Adresses</p>
           </div>
         </div>
+      </div>
+      <div className='container'>
+        <Maps />
       </div>
     </div>
   )

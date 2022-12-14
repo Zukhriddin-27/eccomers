@@ -26,12 +26,10 @@ const ProductsItemImage = ({ img }) => {
         modules={[FreeMode, Navigation, Thumbs]}
         className='mySwiper2'
       >
-        {img?.map((item) => (
-          <SwiperSlide>
-            {/* eslint-disable-next-line */}
-            <img src={item} />
-          </SwiperSlide>
-        ))}
+        <SwiperSlide>
+          {/* eslint-disable-next-line */}
+          <img src={img} />
+        </SwiperSlide>
       </Swiper>
       <Swiper
         onSwiper={setThumbsSwiper}
@@ -42,12 +40,10 @@ const ProductsItemImage = ({ img }) => {
         modules={[FreeMode, Navigation, Thumbs]}
         className='mySwiper'
       >
-        {img?.map((item) => (
-          <SwiperSlide key={item}>
-            {/* eslint-disable-next-line */}
-            <img src={item} />
-          </SwiperSlide>
-        ))}
+        <SwiperSlide>
+          {/* eslint-disable-next-line */}
+          <img src={img} />
+        </SwiperSlide>
       </Swiper>
     </>
   )

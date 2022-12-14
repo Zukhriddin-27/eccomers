@@ -48,7 +48,7 @@ export const navbar = [
     id: 4,
     element: <CategoryProductsPage />,
     title: 'Products',
-    path: '/categories/:id',
+    path: '/category/:category',
     private: false,
     hidden: true,
   },
