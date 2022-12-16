@@ -4,8 +4,11 @@ const menu = (
   <div className='content-home__link'>
     <h2 className='title'>Select language</h2>
     <div className='content-home__language'>
+      {/* eslint-disable-next-line */}
       <img src='https://jthemes.net/themes/f-html/logancee/assets/img/common/flags/flag-1.png' />
+      {/* eslint-disable-next-line */}
       <img src='https://jthemes.net/themes/f-html/logancee/assets/img/common/flags/flag-2.png' />
+      {/* eslint-disable-next-line */}
       <img src='https://jthemes.net/themes/f-html/logancee/assets/img/common/flags/flag-3.png' />
     </div>
     <Divider />
@@ -24,15 +27,18 @@ const menu = (
           <a href='/register'>sign in/sign up</a>
         </li>
         <li>
+          {/* eslint-disable-next-line */}
           <a href='#'>My account</a>
         </li>
         <li>
+          {/* eslint-disable-next-line */}
           <a href='#'>My Wishlist</a>
         </li>{' '}
         <li>
           <a href='/cart'>My Cart</a>
         </li>{' '}
         <li>
+          {/* eslint-disable-next-line */}
           <a href='#'>My checkout</a>
         </li>{' '}
       </ul>

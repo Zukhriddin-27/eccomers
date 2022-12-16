@@ -1,13 +1,12 @@
 import { Divider, Dropdown, Empty } from 'antd'
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Outlet, useLocation, useNavigate } from 'react-router-dom'
-import { UnorderedListOutlined, CloseOutlined } from '@ant-design/icons'
+import { Outlet, useNavigate } from 'react-router-dom'
+import useLocalStroge from 'use-local-storage'
+
 import menu from '../constanta/headerLinks/homeLink'
-import catalog from '../constanta/categoryLink'
 import './navbar.css'
-import useSearch from '../../hooks/useSearch'
-import { uzeReplace } from '../../hooks/useReplace.js'
+import '../../index.css'
 import {
   decrCart,
   deleteFromCart,
@@ -15,21 +14,20 @@ import {
 } from '../../redux/action/cartAction'
 import Filter from '../Filter'
 import Footer from '../Footer'
-import { useQuery } from 'react-query'
 import Catalog from '../constanta/categoryLink'
 
 const Navbar = () => {
   const { cart } = useSelector((state) => state.cart)
   const [iscard, setIscard] = useState(false)
-  const [isCatalog, setIsCatalog] = useState(false)
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const location = useLocation()
+  const [theme, setTheme] = useLocalStroge('theme' ? 'dark' : 'light')
+  const [isNavbar, setIsNavbar] = useState(false)
 
-  const handleSearch = ({ target: { name, value } }) => {
-    navigate(`${location?.pathname}${uzeReplace(name, value)}`)
-    console.log(value)
-  }
+  // const handleSearch = ({ target: { name, value } }) => {
+  //   navigate(`${location?.pathname}${uzeReplace(name, value)}`)
+  //   console.log(value)
+  // }
 
   const handleDellCart = (product) => {
     dispatch(deleteFromCart(product))
@@ -37,12 +35,10 @@ const Navbar = () => {
 
   const handleIncrCart = (item) => {
     dispatch(incerCart(item))
-    item.preventDefault()
   }
 
   const handleDecrCart = (item) => {
     dispatch(decrCart(item))
-    item.preventDefault()
   }
 
   let total = 0
@@ -54,8 +50,22 @@ const Navbar = () => {
     navigate('/cart')
     setIscard(false)
   }
+
+  const switchTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light'
+    setTheme(newTheme)
+  }
+  const changeBackground = () => {
+    if (window.scrollY >= 60) {
+      setIsNavbar(true)
+    } else {
+      setIsNavbar(false)
+    }
+  }
+  window.addEventListener('scroll', changeBackground)
+
   return (
-    <div>
+    <div className='nav-container' data-theme={theme}>
       <div className='content bg '>
         <div className='content-items'>
           <div className='content-item'>
@@ -66,6 +76,7 @@ const Navbar = () => {
           <div className='content-item'>
             <h3>+998900000000</h3>
             <p>Bizda soting</p>
+            <i className='bx bx-moon' onClick={switchTheme}></i>
             <Dropdown
               overlay={menu}
               placement='bottomRight'
@@ -74,68 +85,49 @@ const Navbar = () => {
               trigger='click'
             >
               <div className='navlink'>
-                <i class='bx bx-cog'></i>
+                <i className='bx bx-cog'></i>
               </div>
             </Dropdown>
           </div>
         </div>
       </div>
-      <div className='content '>
+      <div className={isNavbar ? ' content active scroll-nav' : 'content  '}>
         <div className='content-items__nav'>
-          <i class='bx bxs-watch'></i>
+          <img src='/assets/logo.png' alt='logo.png' />
           <h2 className='brand' onClick={() => navigate('/home')}>
             Rolex
           </h2>
           <div>
-            <Catalog />
-            {/* <Dropdown
-              overlay={catalog}
-              placement='bottomRight'
-              icon
-              arrow={{ pointAtCenter: false }}
-              trigger='click'
-            >
-              <div
-                onClick={() => setIsCatalog(!isCatalog)}
-                className='brand-name'
-              >
-                {!isCatalog ? <UnorderedListOutlined /> : <CloseOutlined />}
-                <h4>Katalog</h4>
-              </div>
-            </Dropdown> */}
+            <Catalog isNavbar={isNavbar} />
           </div>
 
-          <div className='search-logo'>
-            <Filter />
-          </div>
+          <Filter isNavbar={isNavbar} />
         </div>
-        {/* <div className='content-item__nav'>
-         {navbar.map(({ path, title, hidden }, index) => {
-            return (
-              !hidden && (
-                <a href={path} className='navLink' key={index.id}>
-                  {title}
-                </a>
-              )
-            )
-          })} 
-        </div> */}
-        <div className='content-item'>
+
+        <div className='content-item svg'>
           <div className='navLink' onClick={() => navigate('/products')}>
-            <h4>All</h4>
+            <h4 className={isNavbar ? 'scroll-nav' : 'nav'}>All</h4>
           </div>
           <div className='navlink' onClick={() => navigate('/favourite')}>
-            <i class='bx bx-heart'></i>
+            <i
+              className={isNavbar ? 'scroll-nav bx bx-heart' : 'bx bx-heart '}
+            ></i>
           </div>
           <div className='card-shop'>
             <i
-              class='bx bx-shopping-bag'
+              className={
+                isNavbar
+                  ? 'scroll-nav bx bx-shopping-bag'
+                  : 'bx bx-shopping-bag '
+              }
               onClick={() => setIscard(!iscard)}
             ></i>
             <div className='product-cart__length'>{cart?.length}</div>
           </div>
           <div className='user-account' onClick={() => navigate('/register')}>
-            <i class='bx bx-user'></i>
+            <i
+              className={isNavbar ? 'scroll-nav bx bx-user' : 'bx bx-user'}
+            ></i>
           </div>
         </div>
       </div>
@@ -174,7 +166,7 @@ const Navbar = () => {
                           -
                         </button>
                         <i
-                          class='bx bxs-trash'
+                          className='bx bxs-trash'
                           onClick={() => handleDellCart(items)}
                         ></i>
                       </div>

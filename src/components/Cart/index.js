@@ -10,14 +10,12 @@ import {
   incerCart,
 } from '../../redux/action/cartAction'
 
-const OPTIONS = ['Apples', 'Nails', 'Bananas', 'Helicopters']
 const Cart = () => {
   const { cart } = useSelector((state) => state.cart)
   const [selectedItems, setSelectedItems] = useState([])
   const dispatch = useDispatch()
   const [isAdd, setIsAdd] = useState(false)
-
-  const filteredOptions = OPTIONS.filter((o) => !selectedItems.includes(o))
+  const [isCart, setIsCart] = useState(false)
 
   let total = 0
   const itemTotal = (value) => {
@@ -40,6 +38,15 @@ const Cart = () => {
   const handleIncrCart = (id) => {
     dispatch(incerCart(id))
   }
+  const changeBackground = () => {
+    if (window.scrollY >= 80) {
+      setIsCart(true)
+    } else {
+      setIsCart(false)
+    }
+  }
+  window.addEventListener('scroll', changeBackground)
+
   return (
     <div className='cart-container'>
       <div className='shop-cart__container'>
@@ -107,11 +114,11 @@ const Cart = () => {
                     <td>
                       <div className='shop-edit'>
                         <i
-                          class='bx bx-x'
+                          className='bx bx-x'
                           onClick={() => handledelete(value)}
                         ></i>
                         <i
-                          class='bx bx-pencil'
+                          className='bx bx-pencil'
                           onClick={() => setIsAdd(!isAdd)}
                         ></i>
                       </div>
@@ -154,7 +161,7 @@ const Cart = () => {
               <button placeholder='Basic usage'>get a quote</button>
             </div>
           </div>
-          <div className='shop-total'>
+          <div className={isCart ? 'shop-total' : 'shop-total'}>
             {cart.map(itemTotal)}
             <h4>sub total: $ {total}</h4>
             <h2>

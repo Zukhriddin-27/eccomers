@@ -1,14 +1,13 @@
 .catalog-container {
-  background: #fff;
+  background: var(--background);
   width: 1044px;
   height: 700px;
   padding: 30px;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  box-shadow: var(--boxshadow) 0px 20px 30px -10px;
 }
 .catalog {
   width: 700px;
   height: 650px;
-
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }

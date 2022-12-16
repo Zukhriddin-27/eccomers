@@ -4,7 +4,7 @@
   margin: auto;
 }
 .footer {
-  background: #f2f2f2;
+  background: var(--page);
   margin-top: -20px;
   padding: 80px 20px 0;
 }

@@ -8,27 +8,27 @@ const Brend = () => {
           <h1 className='category-content__title'>Brends</h1>
           <div className='all-products'>
             <p>See all</p>
-            <i class='bx bx-chevron-right'></i>
+            <i className='bx bx-chevron-right'></i>
           </div>
         </div>
         <div className='catalog-brands__content'>
           <div className='catalog-brands__item'>
             <div className='brand-box'>
-              <div class='brand-box__head catalog-head'>
-                <div class='catalog-head__image'>
+              <div className='brand-box__head catalog-head'>
+                <div className='catalog-head__image'>
                   <img
                     src='https://olcha.uz/uploads/images/manufacturer/KK/KK/Kh/1667632821.png'
                     alt='Apple'
                   />
                 </div>
-                <a href='/uz/manufacturer/apple' class='all-products'>
-                  <p>All products</p> <i class='bx bx-chevron-right'></i>
+                <a href='/uz/manufacturer/apple' className='all-products'>
+                  <p>All products</p> <i className='bx bx-chevron-right'></i>
                 </a>
               </div>
-              <div class='brand-box__content'>
-                <div class='brand-box__item'>
-                  <a href='/uz/manufacturer/apple/klaviatury' class=''>
-                    <div class='brand-box__item-image'>
+              <div className='brand-box__content'>
+                <div className='brand-box__item'>
+                  <a href='/uz/manufacturer/apple/klaviatury' className=''>
+                    <div className='brand-box__item-image'>
                       <img
                         loading='lazy'
                         width='108'
@@ -37,12 +37,12 @@ const Brend = () => {
                         alt='Клавиатуралар'
                       />
                     </div>
-                    <div class='brand-box__item-text'>Keyboards</div>
+                    <div className='brand-box__item-text'>Keyboards</div>
                   </a>
                 </div>
-                <div class='brand-box__item'>
-                  <a href='/uz/manufacturer/apple/telefony' class=''>
-                    <div class='brand-box__item-image'>
+                <div className='brand-box__item'>
+                  <a href='/uz/manufacturer/apple/telefony' className=''>
+                    <div className='brand-box__item-image'>
                       <img
                         loading='lazy'
                         width='108'
@@ -51,12 +51,12 @@ const Brend = () => {
                         alt='Смартфонлар'
                       />
                     </div>
-                    <div class='brand-box__item-text'>Phones</div>
+                    <div className='brand-box__item-text'>Phones</div>
                   </a>
                 </div>
-                <div class='brand-box__item'>
-                  <a href='/uz/manufacturer/apple/planshety' class=''>
-                    <div class='brand-box__item-image'>
+                <div className='brand-box__item'>
+                  <a href='/uz/manufacturer/apple/planshety' className=''>
+                    <div className='brand-box__item-image'>
                       <img
                         loading='lazy'
                         width='108'
@@ -65,29 +65,29 @@ const Brend = () => {
                         alt='Планшетлар'
                       />
                     </div>
-                    <div class='brand-box__item-text'>Tabs</div>
+                    <div className='brand-box__item-text'>Tabs</div>
                   </a>
                 </div>
               </div>
             </div>
           </div>
           <div className='catalog-brands__item'>
-            <div class='brand-box'>
-              <div class='brand-box__head catalog-head'>
-                <div class='catalog-head__image'>
+            <div className='brand-box'>
+              <div className='brand-box__head catalog-head'>
+                <div className='catalog-head__image'>
                   <img
                     src='https://olcha.uz/uploads/images/manufacturer/KK/KK/Ko/1667553735.png'
                     alt='Samsung'
                   />
                 </div>
-                <a href='/uz/manufacturer/apple' class='all-products'>
-                  <p>All products</p> <i class='bx bx-chevron-right'></i>
+                <a href='/uz/manufacturer/apple' className='all-products'>
+                  <p>All products</p> <i className='bx bx-chevron-right'></i>
                 </a>
               </div>
-              <div class='brand-box__content'>
-                <div class='brand-box__item'>
-                  <a href='/uz/manufacturer/samsung/monitory' class=''>
-                    <div class='brand-box__item-image'>
+              <div className='brand-box__content'>
+                <div className='brand-box__item'>
+                  <a href='/uz/manufacturer/samsung/monitory' className=''>
+                    <div className='brand-box__item-image'>
                       <img
                         loading='lazy'
                         width='108'
@@ -96,12 +96,15 @@ const Brend = () => {
                         alt='Мониторлар'
                       />
                     </div>
-                    <div class='brand-box__item-text'>Monitors</div>
+                    <div className='brand-box__item-text'>Monitors</div>
                   </a>
                 </div>
-                <div class='brand-box__item'>
-                  <a href='/uz/manufacturer/samsung/ssd-nakopiteli' class=''>
-                    <div class='brand-box__item-image'>
+                <div className='brand-box__item'>
+                  <a
+                    href='/uz/manufacturer/samsung/ssd-nakopiteli'
+                    className=''
+                  >
+                    <div className='brand-box__item-image'>
                       <img
                         loading='lazy'
                         width='108'
@@ -110,15 +113,15 @@ const Brend = () => {
                         alt='SSD тўплагичлар'
                       />
                     </div>
-                    <div class='brand-box__item-text'>SSD hards</div>
+                    <div className='brand-box__item-text'>SSD hards</div>
                   </a>
                 </div>
-                <div class='brand-box__item'>
+                <div className='brand-box__item'>
                   <a
                     href='/uz/manufacturer/samsung/vnutrennie-nakopiteli'
-                    class=''
+                    className=''
                   >
-                    <div class='brand-box__item-image'>
+                    <div className='brand-box__item-image'>
                       <img
                         loading='lazy'
                         width='108'
@@ -127,29 +130,29 @@ const Brend = () => {
                         alt='Ички қаттиқ дисклар'
                       />
                     </div>
-                    <div class='brand-box__item-text'>HDD hards</div>
+                    <div className='brand-box__item-text'>HDD hards</div>
                   </a>
                 </div>
               </div>
             </div>
           </div>
           <div className='catalog-brands__item'>
-            <div class='brand-box'>
-              <div class='brand-box__head catalog-head'>
-                <div class='catalog-head__image'>
+            <div className='brand-box'>
+              <div className='brand-box__head catalog-head'>
+                <div className='catalog-head__image'>
                   <img
                     src='https://olcha.uz/uploads/images/manufacturer/KK/KK/Kd/1646038705.jpg'
                     alt='Sony'
                   />
                 </div>
-                <a href='/uz/manufacturer/apple' class='all-products'>
-                  <p>All products</p> <i class='bx bx-chevron-right'></i>
+                <a href='/uz/manufacturer/apple' className='all-products'>
+                  <p>All products</p> <i className='bx bx-chevron-right'></i>
                 </a>
               </div>
-              <div class='brand-box__content'>
-                <div class='brand-box__item'>
-                  <a href='/uz/manufacturer/sony/televizory' class=''>
-                    <div class='brand-box__item-image'>
+              <div className='brand-box__content'>
+                <div className='brand-box__item'>
+                  <a href='/uz/manufacturer/sony/televizory' className=''>
+                    <div className='brand-box__item-image'>
                       <img
                         loading='lazy'
                         width='108'
@@ -158,12 +161,15 @@ const Brend = () => {
                         alt='Телевизорлар'
                       />
                     </div>
-                    <div class='brand-box__item-text'>Televisions</div>
+                    <div className='brand-box__item-text'>Televisions</div>
                   </a>
                 </div>
-                <div class='brand-box__item'>
-                  <a href='/uz/manufacturer/sony/muzykalnyy-tsentr' class=''>
-                    <div class='brand-box__item-image'>
+                <div className='brand-box__item'>
+                  <a
+                    href='/uz/manufacturer/sony/muzykalnyy-tsentr'
+                    className=''
+                  >
+                    <div className='brand-box__item-image'>
                       <img
                         loading='lazy'
                         width='108'
@@ -172,12 +178,12 @@ const Brend = () => {
                         alt='Мусиқа системалари'
                       />
                     </div>
-                    <div class='brand-box__item-text'>Music systems</div>
+                    <div className='brand-box__item-text'>Music systems</div>
                   </a>
                 </div>
-                <div class='brand-box__item'>
-                  <a href='/uz/manufacturer/sony/akustika' class=''>
-                    <div class='brand-box__item-image'>
+                <div className='brand-box__item'>
+                  <a href='/uz/manufacturer/sony/akustika' className=''>
+                    <div className='brand-box__item-image'>
                       <img
                         loading='lazy'
                         width='108'
@@ -186,32 +192,32 @@ const Brend = () => {
                         alt='Акустика'
                       />
                     </div>
-                    <div class='brand-box__item-text'>Акустика</div>
+                    <div className='brand-box__item-text'>Акустика</div>
                   </a>
                 </div>
               </div>
             </div>
           </div>
           <div className='catalog-brands__item'>
-            <div class='brand-box'>
-              <div class='brand-box__head catalog-head'>
-                <div class='catalog-head__image'>
+            <div className='brand-box'>
+              <div className='brand-box__head catalog-head'>
+                <div className='catalog-head__image'>
                   <img
                     src='https://olcha.uz/uploads/images/manufacturer/KK/KK/Kp/1646038892.jpg'
                     alt='Xiaomi'
                   />
                 </div>
-                <a href='/uz/manufacturer/apple' class='all-products'>
-                  <p>All products</p> <i class='bx bx-chevron-right'></i>
+                <a href='/uz/manufacturer/apple' className='all-products'>
+                  <p>All products</p> <i className='bx bx-chevron-right'></i>
                 </a>
               </div>
-              <div class='brand-box__content'>
-                <div class='brand-box__item'>
+              <div className='brand-box__content'>
+                <div className='brand-box__item'>
                   <a
                     href='/uz/manufacturer/xiaomi/kamery-videonablyudeniya'
-                    class=''
+                    className=''
                   >
-                    <div class='brand-box__item-image'>
+                    <div className='brand-box__item-image'>
                       <img
                         loading='lazy'
                         width='108'
@@ -220,12 +226,12 @@ const Brend = () => {
                         alt='Хавфсизлик камералари'
                       />
                     </div>
-                    <div class='brand-box__item-text'>Cameras</div>
+                    <div className='brand-box__item-text'>Cameras</div>
                   </a>
                 </div>
-                <div class='brand-box__item'>
-                  <a href='/uz/manufacturer/xiaomi/mediapleer' class=''>
-                    <div class='brand-box__item-image'>
+                <div className='brand-box__item'>
+                  <a href='/uz/manufacturer/xiaomi/mediapleer' className=''>
+                    <div className='brand-box__item-image'>
                       <img
                         loading='lazy'
                         width='108'
@@ -234,12 +240,12 @@ const Brend = () => {
                         alt='Media Player'
                       />
                     </div>
-                    <div class='brand-box__item-text'>Media Player</div>
+                    <div className='brand-box__item-text'>Media Player</div>
                   </a>
                 </div>
-                <div class='brand-box__item'>
-                  <a href='/uz/manufacturer/xiaomi/myshi' class=''>
-                    <div class='brand-box__item-image'>
+                <div className='brand-box__item'>
+                  <a href='/uz/manufacturer/xiaomi/myshi' className=''>
+                    <div className='brand-box__item-image'>
                       <img
                         loading='lazy'
                         width='108'
@@ -248,29 +254,32 @@ const Brend = () => {
                         alt='Сичқончалар'
                       />
                     </div>
-                    <div class='brand-box__item-text'>Mouses</div>
+                    <div className='brand-box__item-text'>Mouses</div>
                   </a>
                 </div>
               </div>
             </div>
           </div>
           <div className='catalog-brands__item'>
-            <div class='brand-box'>
-              <div class='brand-box__head catalog-head'>
-                <div class='catalog-head__image'>
+            <div className='brand-box'>
+              <div className='brand-box__head catalog-head'>
+                <div className='catalog-head__image'>
                   <img
                     src='https://olcha.uz/uploads/images/manufacturer/KK/KK/KB/1646038994.jpg'
                     alt='LG'
                   />
                 </div>
-                <a href='/uz/manufacturer/apple' class='all-products'>
-                  <p>All products</p> <i class='bx bx-chevron-right'></i>
+                <a href='/uz/manufacturer/apple' className='all-products'>
+                  <p>All products</p> <i className='bx bx-chevron-right'></i>
                 </a>
               </div>
-              <div class='brand-box__content'>
-                <div class='brand-box__item'>
-                  <a href='/uz/manufacturer/lg/pylesosy-i-aksessuary' class=''>
-                    <div class='brand-box__item-image'>
+              <div className='brand-box__content'>
+                <div className='brand-box__item'>
+                  <a
+                    href='/uz/manufacturer/lg/pylesosy-i-aksessuary'
+                    className=''
+                  >
+                    <div className='brand-box__item-image'>
                       <img
                         loading='lazy'
                         width='108'
@@ -279,12 +288,12 @@ const Brend = () => {
                         alt='Уй учун чангютгичлар'
                       />
                     </div>
-                    <div class='brand-box__item-text'>Cleaners</div>
+                    <div className='brand-box__item-text'>Cleaners</div>
                   </a>
                 </div>
-                <div class='brand-box__item'>
-                  <a href='/uz/manufacturer/lg/konditsionery' class=''>
-                    <div class='brand-box__item-image'>
+                <div className='brand-box__item'>
+                  <a href='/uz/manufacturer/lg/konditsionery' className=''>
+                    <div className='brand-box__item-image'>
                       <img
                         loading='lazy'
                         width='108'
@@ -293,7 +302,7 @@ const Brend = () => {
                         alt='Кондиционерлар ва сплит тизимлар'
                       />
                     </div>
-                    <div class='brand-box__item-text'>
+                    <div className='brand-box__item-text'>
                       Air conditioners and split systems
                     </div>
                   </a>
@@ -303,21 +312,21 @@ const Brend = () => {
           </div>
           <div className='catalog-brands__item'>
             <div className='brand-box'>
-              <div class='brand-box__head catalog-head'>
-                <div class='catalog-head__image'>
+              <div className='brand-box__head catalog-head'>
+                <div className='catalog-head__image'>
                   <img
                     src='https://olcha.uz/uploads/images/manufacturer/KK/KK/Ka/1664348028.png'
                     alt='Versace'
                   />
                 </div>
-                <a href='/uz/manufacturer/apple' class='all-products'>
-                  <p>All products</p> <i class='bx bx-chevron-right'></i>
+                <a href='/uz/manufacturer/apple' className='all-products'>
+                  <p>All products</p> <i className='bx bx-chevron-right'></i>
                 </a>
               </div>
-              <div class='brand-box__content'>
-                <div class='brand-box__item'>
-                  <a href='/uz/manufacturer/versace/dlya-nee' class=''>
-                    <div class='brand-box__item-image'>
+              <div className='brand-box__content'>
+                <div className='brand-box__item'>
+                  <a href='/uz/manufacturer/versace/dlya-nee' className=''>
+                    <div className='brand-box__item-image'>
                       <img
                         loading='lazy'
                         width='108'
@@ -326,12 +335,12 @@ const Brend = () => {
                         alt='Аёллар учун парфюмерия'
                       />
                     </div>
-                    <div class='brand-box__item-text'>Female parfium</div>
+                    <div className='brand-box__item-text'>Female parfium</div>
                   </a>
                 </div>
-                <div class='brand-box__item'>
-                  <a href='/uz/manufacturer/versace/dlya-nego' class=''>
-                    <div class='brand-box__item-image'>
+                <div className='brand-box__item'>
+                  <a href='/uz/manufacturer/versace/dlya-nego' className=''>
+                    <div className='brand-box__item-image'>
                       <img
                         loading='lazy'
                         width='108'
@@ -340,15 +349,15 @@ const Brend = () => {
                         alt='Эркаклар учун парфюмерия'
                       />
                     </div>
-                    <div class='brand-box__item-text'>Male parfium</div>
+                    <div className='brand-box__item-text'>Male parfium</div>
                   </a>
                 </div>
-                <div class='brand-box__item'>
+                <div className='brand-box__item'>
                   <a
                     href='/uz/manufacturer/versace/podarochnye-nabory'
-                    class=''
+                    className=''
                   >
-                    <div class='brand-box__item-image'>
+                    <div className='brand-box__item-image'>
                       <img
                         loading='lazy'
                         width='108'
@@ -357,7 +366,9 @@ const Brend = () => {
                         alt='Парфюмерия тўпламлари'
                       />
                     </div>
-                    <div class='brand-box__item-text'>Collecton parfiums</div>
+                    <div className='brand-box__item-text'>
+                      Collecton parfiums
+                    </div>
                   </a>
                 </div>
               </div>

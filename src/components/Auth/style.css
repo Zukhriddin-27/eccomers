@@ -7,8 +7,8 @@
   align-items: center;
   font-family: 'Montserrat', sans-serif;
   font-size: 12px;
-  background-color: #ecf0f3;
-  color: #a0a5a8;
+  background-color: var(--reg-bg);
+  color: var(--reg-color);
 }
 
 /**/
@@ -19,8 +19,9 @@
   min-height: 600px;
   height: 600px;
   padding: 25px;
-  background-color: #ecf0f3;
-  box-shadow: 10px 10px 10px #d1d9e6, -10px -10px 10px #f9f9f9;
+  background-color: var(--reg-bg);
+  box-shadow: 10px 10px 10px var(--reg-box),
+    -10px -10px 10px var(--reg-boxshadow);
   border-radius: 12px;
   overflow: hidden;
 }
@@ -54,7 +55,7 @@
   width: 600px;
   height: 100%;
   padding: 25px;
-  background-color: #ecf0f3;
+  background-color: var(--reg-bg);
   transition: 1.25s;
 }
 
@@ -88,13 +89,15 @@
   border: none;
   outline: none;
   font-family: 'Montserrat', sans-serif;
-  background-color: #ecf0f3;
+  background-color: var(--bg-register);
   transition: 0.25s ease;
   border-radius: 8px;
-  box-shadow: inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px #f9f9f9;
+  box-shadow: inset 2px 2px 4px var(--reg-box),
+    inset -2px -2px 4px var(--reg-boxshadow);
 }
 .form__input:focus {
-  box-shadow: inset 4px 4px 4px #d1d9e6, inset -4px -4px 4px #f9f9f9;
+  box-shadow: inset 4px 4px 4px var(--reg-box),
+    inset -4px -4px 4px var(--reg-boxshadow);
 }
 .form__span {
   margin-top: 30px;
@@ -104,7 +107,7 @@
   color: #181818;
   font-size: 15px;
   margin-top: 25px;
-  border-bottom: 1px solid #a0a5a8;
+  border-bottom: 1px solid var(--reg-color);
   line-height: 2;
 }
 
@@ -112,7 +115,7 @@
   font-size: 26px;
   font-weight: 700;
   line-height: 3;
-  color: #181818;
+  color: var(--border);
 }
 
 .description {
@@ -130,9 +133,9 @@
   font-weight: 700;
   font-size: 14px;
   letter-spacing: 1.15px;
-  background-color: #4b70e2;
-  color: #f9f9f9;
-  box-shadow: 8px 8px 16px #d1d9e6, -8px -8px 16px #f9f9f9;
+  background-color: var(--border);
+  color: var(--text-secondary);
+  box-shadow: 8px 8px 16px var(--reg-box), -8px -8px 16px var(--reg-boxshadow);
   border: none;
   outline: none;
 }
@@ -160,17 +163,18 @@
   padding: 50px;
   z-index: 200;
   transition: 1.25s;
-  background-color: #ecf0f3;
+  background-color: var(--reg-bg);
   overflow: hidden;
-  box-shadow: 4px 4px 10px #d1d9e6, -4px -4px 10px #f9f9f9;
+  box-shadow: 4px 4px 10px var(--reg-box), -4px -4px 10px var(--reg-boxshadow);
 }
 .switch__circle {
   position: absolute;
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  background-color: #ecf0f3;
-  box-shadow: inset 8px 8px 12px #d1d9e6, inset -8px -8px 12px #f9f9f9;
+  background-color: var(--reg-bg);
+  box-shadow: inset 8px 8px 12px var(--reg-box),
+    inset -8px -8px 12px var(--reg-boxshadow);
   bottom: -60%;
   left: -60%;
   transition: 1.25s;
@@ -195,13 +199,13 @@
   cursor: pointer;
 }
 .switch__button:hover {
-  box-shadow: 6px 6px 10px #d1d9e6, -6px -6px 10px #f9f9f9;
+  box-shadow: 6px 6px 10px var(--reg-box), -6px -6px 10px var(--reg-boxshadow);
   transform: scale(0.985);
   transition: 0.25s;
 }
 .switch__button:active,
 .switch__button:focus {
-  box-shadow: 2px 2px 6px #d1d9e6, -2px -2px 6px #f9f9f9;
+  box-shadow: 2px 2px 6px var(--reg-box), -2px -2px 6px var(--reg-boxshadow);
   transform: scale(0.97);
   transition: 0.25s;
 }

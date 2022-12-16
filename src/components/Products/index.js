@@ -32,6 +32,7 @@ const Header = () => {
         totam, et alias dolorum harum explicabo, earum saepe est sit commodi
         provident velit!
       </div>
+
       <div className='location'>
         <Breadcrumb>
           <Breadcrumb.Item href='/home'>

@@ -1,5 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100&display=swap');
 
+:root {
+  --background: #ffff;
+  --text-primary: #000;
+  --text-secondary: #111;
+  --text: blue;
+  --border: #ffb32f;
+  --page: #efefef;
+  --borderbg: rgb(126, 126, 126);
+  --price: red;
+  --bg-register: #ecf0f3;
+  --boxshadow: rgb(38, 57, 77);
+  --reg-bg: #ecf0f3;
+  --reg-color: #a0a5a8;
+  --reg-boxshadow: #f9f9f9;
+  --reg-box: #d1d9e6;
+  --search: #000;
+}
+[data-theme='dark'] {
+  --background: rgb(56, 56, 56);
+  --text-primary: #ffb32f;
+  --text-secondary: #fff;
+  --text: rgb(0, 0, 255);
+  --border: #ffb32f;
+  --page: #393939;
+  --borderbg: rgb(232, 232, 232);
+  --price: red;
+  --bg-register: #ecf0f3;
+  --boxshadow: rgb(168, 199, 233);
+  --reg-bg: #2d2d2d;
+  --reg-color: #ffb32f;
+  --reg-boxshadow: #616161;
+  --reg-box: #6b6b6b;
+  --search: #ffb32f;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,6 +44,8 @@
 body {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
+  color: var(--text-primary);
+  background: (var(--background));
 }
 .container {
   max-width: 1440px;
@@ -16,11 +53,12 @@ body {
   margin: auto;
   position: relative;
   padding: 0 50px;
+  background: var(--background);
 }
 a {
   text-decoration: none;
   text-transform: none;
-  color: black;
+  color: var(--text-primary);
 }
 li {
   text-decoration: none;
@@ -29,9 +67,9 @@ li {
 }
 
 .btn {
-  border: 1px solid #000;
+  border: 1px solid var(--text-primary);
   font-size: 20px;
-  color: #fff;
+  color: var(--background);
   background: rgb(18, 17, 17);
   text-transform: uppercase;
   text-align: center;
@@ -42,14 +80,14 @@ li {
 .btn-light {
   height: 60px;
   width: 120px;
-  border: 1px solid rgb(120, 119, 119);
+  border: 1px solid var(--page);
   font-size: 20px;
-  color: #fff;
-  background: rgb(120, 119, 119);
+  color: var(--background);
+  background: var(--page);
   text-transform: uppercase;
   text-align: center;
   padding: 18px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: var(--page) 0px 5px 15px;
 }
 .content-title {
   text-align: center;
@@ -64,4 +102,11 @@ li {
   opacity: 0.7;
   width: 800px;
   margin: auto;
+}
+.ant-divider .css-dev-only-do-not-override-1s3dcof .ant-divider-horizontal {
+  background: #fff !important;
+}
+.ant-breadcrumb-link,
+.ant-breadcrumb-separator {
+  color: var(--border) !important;
 }

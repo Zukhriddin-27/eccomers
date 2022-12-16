@@ -10,7 +10,7 @@
   text-align: center;
   align-content: center;
   height: 300px;
-  background: #f2f2f2;
+  background: var(--page);
 }
 .breadcrumb {
   display: flex;
@@ -35,17 +35,17 @@
   padding: 10px 40px;
   width: 300px;
   text-align: start;
-  border-bottom: 1px solid #d2d2d2;
+  border-bottom: 1px solid var(--borderbg);
 }
 .shop-cart__table tr {
-  border-bottom: 1px solid #d2d2d2;
+  border-bottom: 1px solid var(--borderbg);
 }
 .shop-cart__table td {
   width: 300px;
   padding: 10px 40px;
   text-align: start;
   height: 160px;
-  border-bottom: 1px solid #d2d2d2;
+  border-bottom: 1px solid var(--borderbg);
 }
 .shop-cart__image {
   width: 90px;
@@ -72,9 +72,10 @@
   height: 50px;
   font-size: 15px;
   text-transform: uppercase;
-  background: #fff;
-  border: 1px solid #d2d2d2;
+  background: var(--border);
+  border: 1px solid var(--borderbg);
   font-weight: 500;
+  color: var(--background);
 }
 .shop-clear {
   margin-right: 20px;
@@ -99,8 +100,8 @@
   width: 100%;
   height: 50px;
   margin-bottom: 20px;
-  background: #fff;
-  border: 1px solid #d2d2d2;
+  background: var(--page);
+  border: 1px solid var(--border);
   padding: 0 10px;
 }
 .ant-select {
@@ -116,10 +117,11 @@
 .shop-input__item button {
   width: 40%;
   height: 50px;
-  background: #fff;
-  border: 1px solid #d2d2d2;
+  background: var(--page);
+  border: 1px solid var(--border);
   text-transform: uppercase;
   font-weight: 700;
+  color: var(--text-secondary);
 }
 
 .cart-form {
@@ -128,14 +130,17 @@
 }
 .shop-total {
   padding: 40px;
-  background: #efefef;
+  background: var(--page);
+  border: 1px solid var(--border);
+  border-radius: 8px;
   width: 480px;
   height: 310px;
   margin-top: 50px;
   text-align: end;
-  top: 200px;
+
+  position: sticky;
+  top: 80px;
   z-index: 999;
-  right: 150px;
 }
 .shop-total h4,
 h2,
@@ -151,19 +156,19 @@ button {
   font-size: 16px;
 }
 .shop-total span {
-  color: red;
+  color: var(--price);
 }
 .check-btn {
-  background: #ffb32f !important;
-  border: 1px solid #ffb32f !important;
+  background: var(--border) !important;
+  border: 1px solid var(--border) !important;
   color: #000 !important;
   font-weight: 600;
   cursor: pointer;
 }
 .check-btn:hover {
-  background: #ffb32f !important;
-  border: 1px solid #fff !important;
-  color: #000 !important;
+  background: var(--border) !important;
+  border: 1px solid var(--background) !important;
+  color: var(--text-primary) !important;
   font-weight: 800;
   opacity: 0.7;
 }
@@ -181,17 +186,17 @@ button {
 .product-add {
   padding: 5px 12px;
   cursor: pointer;
-  background: #fff;
+  background: var(--background);
   font-size: 19px;
-  border: 1px solid #ffb32f;
+  border: 1px solid var(--border);
 }
 .product-remove {
   padding: 5px 14px;
   cursor: pointer;
-  background: #fff;
+  background: var(--background);
   font-size: 19px;
 
-  border: 1px solid #ffb32f;
+  border: 1px solid var(--border);
 }
 .product-count {
   margin: 0 15px 0 15px;

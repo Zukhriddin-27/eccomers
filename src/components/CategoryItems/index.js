@@ -8,7 +8,7 @@ const CategoryItems = () => {
           <h1 className='category-content__title'>Apple Products</h1>
           <div className='all-products'>
             <a href='/products'>Barchasini ko'rish</a>
-            <i class='bx bx-chevron-right'></i>
+            <i className='bx bx-chevron-right'></i>
           </div>
         </div>
         <div className='category-content__items'>
@@ -19,13 +19,13 @@ const CategoryItems = () => {
                   src='https://olcha.uz/image/220x220/products/OFLhO6OVhfJouvlaoWm6d0qp0Mbr8V0CKkbj04dWsVnIfqcKtdJ8ACRGPxQO.'
                   alt='apple.jpeg'
                 />
-                <i class='bx bx-heart heart'></i>
+                <i className='bx bx-heart heart'></i>
               </div>
               <h3>Apple iPad mini 6 Wi-Fi (2021) 256 GB Starlight</h3>
               <p className='price-product'>$800.000</p>
               <p className='price-product__moonth'>$100 x 12 moonth</p>
               <div className='cart-button'>
-                <i class='bx bxs-cart-add'></i>
+                <i className='bx bxs-cart-add'></i>
                 <button className='cart-btn'>Muddatli to'lov</button>
               </div>
             </div>
@@ -61,15 +61,16 @@ const CategoryItems = () => {
               </div>
               <div className='app-category__item'>
                 <div className='category-card__image'>
+                  {/* eslint-disable-next-line */}
                   <img src='https://olcha.uz/image/220x220/products/DrRxYRzDNTYB34W68lZElrHkYpHDlEdP0CZMq0f9JA16rMceE2xNJG8ziYq1.' />
-                  <i class='bx bx-heart heart '></i>
+                  <i className='bx bx-heart heart '></i>
                 </div>
                 <div>
                   <h3>Apple Watch Series 8 45mm Silver</h3>
                   <p className='price-product'>$800.000</p>
                   <p className='price-product__moonth'>$100 x 12 moonth</p>
                   <div className='cart-button'>
-                    <i class='bx bxs-cart-add'></i>
+                    <i className='bx bxs-cart-add'></i>
                     <button className='cart-btn'>Muddatli to'lov</button>
                   </div>
                 </div>
@@ -83,13 +84,13 @@ const CategoryItems = () => {
                       src='https://olcha.uz/image/220x220/products/OFLhO6OVhfJouvlaoWm6d0qp0Mbr8V0CKkbj04dWsVnIfqcKtdJ8ACRGPxQO.'
                       alt='apple.jpeg'
                     />
-                    <i class='bx bx-heart heart'></i>
+                    <i className='bx bx-heart heart'></i>
                   </div>
                   <h3>Apple iPad mini 6 Wi-Fi (2021) 256 GB Starlight</h3>
                   <p className='price-product'>$800.000</p>
                   <p className='price-product__moonth'>$100 x 12 moonth</p>
                   <div className='cart-button'>
-                    <i class='bx bxs-cart-add'></i>
+                    <i className='bx bxs-cart-add'></i>
                     <button className='cart-btn'>Muddatli to'lov</button>
                   </div>
                 </div>
@@ -99,13 +100,13 @@ const CategoryItems = () => {
                       src='https://olcha.uz/image/220x220/products/OFLhO6OVhfJouvlaoWm6d0qp0Mbr8V0CKkbj04dWsVnIfqcKtdJ8ACRGPxQO.'
                       alt='apple.jpeg'
                     />
-                    <i class='bx bx-heart heart'></i>
+                    <i className='bx bx-heart heart'></i>
                   </div>
                   <h3>Apple iPad mini 6 Wi-Fi (2021) 256 GB Starlight</h3>
                   <p className='price-product'>$800.000</p>
                   <p className='price-product__moonth'>$100 x 12 moonth</p>
                   <div className='cart-button'>
-                    <i class='bx bxs-cart-add'></i>
+                    <i className='bx bxs-cart-add'></i>
                     <button className='cart-btn'>Muddatli to'lov</button>
                   </div>
                 </div>
@@ -115,13 +116,13 @@ const CategoryItems = () => {
                       src='https://olcha.uz/image/220x220/products/OFLhO6OVhfJouvlaoWm6d0qp0Mbr8V0CKkbj04dWsVnIfqcKtdJ8ACRGPxQO.'
                       alt='apple.jpeg'
                     />
-                    <i class='bx bx-heart heart'></i>
+                    <i className='bx bx-heart heart'></i>
                   </div>
                   <h3>Apple iPad mini 6 Wi-Fi (2021) 256 GB Starlight</h3>
                   <p className='price-product'>$800.000</p>
                   <p className='price-product__moonth'>$100 x 12 moonth</p>
                   <div className='cart-button'>
-                    <i class='bx bxs-cart-add'></i>
+                    <i className='bx bxs-cart-add'></i>
                     <button className='cart-btn'>Muddatli to'lov</button>
                   </div>
                 </div>

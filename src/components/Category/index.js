@@ -9,6 +9,7 @@ import 'swiper/css/free-mode'
 import 'swiper/css/pagination'
 import { useNavigate } from 'react-router-dom'
 import { useQuery } from 'react-query'
+import { Divider } from 'antd'
 
 const Category = () => {
   const navigate = useNavigate()
@@ -121,6 +122,7 @@ const Category = () => {
           </SwiperSlide>
         </Swiper>
       </>
+      <Divider />
     </div>
   )
 }

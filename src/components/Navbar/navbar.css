@@ -6,9 +6,13 @@
   padding: 0 150px;
   position: relative;
 }
+.nav-container {
+  background: var(--background);
+  color: var(--text-primary);
+}
 .bg {
-  background: #ffb32f;
-  color: #000;
+  background: var(--border);
+  color: var(--text-primary);
   height: 60px;
 }
 
@@ -20,6 +24,16 @@
 }
 .content:nth-child(2) {
   height: auto;
+  box-shadow: var(--text-secondary) 0px 0px 1px 0px;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+.scroll-nav {
+  color: #000 !important;
+}
+.content:nth-child(2).active {
+  background: var(--border);
 }
 .content-items__nav {
   display: flex;
@@ -27,8 +41,11 @@
   align-items: center;
   margin: 10px 0 10px;
 }
+.content-items__nav img {
+  width: 50px;
+}
 .content-items__nav h2:nth-child(3) {
-  border: 2px solid #000;
+  border: 2px solid var(--text-primary);
   margin-left: 30px;
   padding: 10px 30px;
   border-radius: 8px;
@@ -41,54 +58,39 @@
   gap: 40px;
   font-size: 16px;
   font-weight: 500;
+  color: #000;
 }
 .content-item p:nth-child(1) {
-  background: #fff;
-  color: #000;
+  background: var(--background);
+  color: var(--border);
   padding: 8px 30px;
   border-radius: 8px;
 }
 .content-item p:nth-child(2) {
-  border: 2px solid #000;
+  border: 2px solid var(--background);
   padding: 6px 20px;
   border-radius: 8px;
 }
-.search-logo {
-  position: relative;
-  margin-left: 30px;
-}
-.bx-search-alt-2 {
-  position: absolute;
-  right: -5px;
-  top: 3px;
-  background: #ffb32f;
-  padding: 8px 20px;
-  border-radius: 8px;
-}
-.search {
-  width: 700px;
-  height: 50px;
-  padding: 0 20px;
-  font-size: 18px;
-  background: #f2f2f2;
-  border: none;
-  border-radius: 8px;
-}
+/*  */
 
 .navLink {
   font-size: 16px;
   font-weight: 300;
   padding: 0 20px;
+  color: var(--text-primary);
 }
 .brand-name {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid #111;
+  border: 2px solid var(--text-primary);
   padding: 12px 30px;
   margin-left: 20px;
   font-size: 22px;
   border-radius: 8px;
+}
+.brand-active {
+  border: 2px solid #000;
 }
 .brand-name h4 {
   margin-left: 8px;
@@ -97,9 +99,13 @@
   font-weight: 300;
   font-size: 16px;
 }
-
 .bx {
   font-size: 28px;
+  margin-right: 10px;
+}
+.svg .bx {
+  font-size: 28px;
+  color: var(--text-primary);
   margin-right: 10px;
 }
 
@@ -107,11 +113,11 @@
   width: 500px;
   height: 90vh;
   padding: 20px 30px;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+  box-shadow: var(--text-secondary) 0px 0px 16px;
   position: absolute;
   right: 0;
-  z-index: 999;
-  background: #fff;
+  z-index: 9992;
+  background: var(--background);
   overflow: scroll;
 
   /* position: fixed; */
@@ -129,7 +135,7 @@
 .cart-image__add {
   width: 100px;
   height: 140px;
-  border-right: 0.5px solid rgb(164, 164, 164);
+  border-right: 0.5px solid var(--page);
   padding: 5px;
   object-fit: contain;
 }
@@ -140,7 +146,7 @@
 }
 .cart-price {
   font-size: 20px;
-  color: rgb(207, 157, 17);
+  color: var(--border);
   margin-bottom: 20px;
   font-weight: 600;
 }
@@ -154,15 +160,15 @@
   font-size: 24px;
   padding: 5px;
   width: 40px;
-  background: #fff;
+  background: var(--background);
   border: none;
   cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  box-shadow: var(--page) 0px 2px 4px, var(--text-primary) 0px 7px 13px -3px,
+    var(--page) 0px -3px 0px inset;
 }
 
 .cart-content__count button:hover {
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  box-shadow: var(--borderbg) 0px 20px 30px -10px;
 }
 .count {
   margin: 0 20px;
@@ -186,8 +192,8 @@
   position: absolute;
   bottom: 18px;
   right: -4px;
-  background: rgb(241, 196, 62);
-  border: 1px solid #fff;
+  background: var(--border);
+  border: 1px solid var(--text-primary);
   text-align: center;
   align-content: center;
   width: 24px;
@@ -208,9 +214,9 @@
 .check {
   width: 100%;
   height: 50px;
-  background: rgb(241, 196, 62);
+  background: var(--border);
   border: none;
   border-radius: 8px;
   font-size: 20px;
-  color: #000;
+  color: var(--text-primary);
 }

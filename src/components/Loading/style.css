@@ -1,1 +1,6 @@
-
+.ant-spin-dot-item {
+  background: var(--border) !important;
+}
+.ant-spin-text {
+  color: var(--border) !important;
+}

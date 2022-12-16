@@ -46,7 +46,7 @@ const CartProduct = (props) => {
       <div className='cart_products'>
         <div className='bg-heart '></div>
         <i
-          class={
+          className={
             isFavourite ? 'bx bx-heart pro-heart__add' : 'bx bx-heart pro-heart'
           }
           onClick={() => handleFavourite(data)}
@@ -64,7 +64,7 @@ const CartProduct = (props) => {
             className='  btn-cart__add'
             onClick={() => handleAddCart(data)}
           >
-            <i class='bx bx-cart-add cart-add'></i>
+            <i className='bx bx-cart-add cart-add'></i>
           </button>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Space, Spin } from 'antd'
+import './style.css'
 const Loading = () => (
   <Space
     direction='vertical'

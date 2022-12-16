@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #f2f2f2;
+  background: var(--background);
   padding: 50px 0;
 }
 .category-content {
@@ -17,7 +17,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: #ffb32f;
+  color: var(--border);
   font-size: 16px;
 }
 .all-products:hover {
@@ -35,12 +35,13 @@
 }
 
 .brand-box {
-  background-color: rgb(255, 255, 255);
+  background-color: var(--background);
   border-radius: 12px;
   height: 100%;
   overflow: hidden;
   padding: 24px;
   width: 100%;
+  border: 1px solid var(--border);
 }
 .catalog-head {
   align-items: center;
@@ -59,7 +60,7 @@
   max-height: 100%;
 }
 .brand-box .brand-box__head .catalog-head__link {
-  background-color: rgb(255, 255, 255);
+  background-color: var(--background);
   border-radius: 12px;
   min-height: 48px;
   padding: 12px;

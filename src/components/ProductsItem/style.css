@@ -28,13 +28,13 @@
 
 .product-item__price {
   font-size: 28px;
-  color: rgb(251, 194, 6);
+  color: var(--border);
   font-weight: 700;
   margin: 24px 0;
   letter-spacing: 2px;
 }
 .delivery {
-  color: blue;
+  color: var(--text);
   font-weight: 600;
 }
 .delivery-item {
@@ -74,8 +74,8 @@
   text-align: center;
   font-size: 22px;
   font-weight: 600;
-  background: #fff;
-  border: 1px solid rgb(153, 153, 153);
+  background: var(--background);
+  border: 1px solid var(--page);
 }
 .product-item__qty {
   display: flex;
@@ -89,10 +89,9 @@
   border: none;
 }
 .bxs-trash {
-  color: rgb(251, 194, 6);
+  color: var(--border);
 }
-.description {
-}
+
 .description h2 {
   margin-bottom: 20px;
 }

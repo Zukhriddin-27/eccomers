@@ -4,7 +4,11 @@
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   position: relative;
+  border: 1px solid var(--border);
+  background: var(--background);
+  text-align: center;
 }
+
 .products-image {
   width: 360px;
   height: 270px;
@@ -15,7 +19,7 @@
   position: absolute;
   right: 4px;
   top: 4px;
-  background: #ffb32f;
+  background: var(--border);
   opacity: 0.8;
   width: 40px;
   height: 40px;
@@ -26,23 +30,23 @@
   position: absolute;
   right: 0;
   top: 10px;
-  color: #fff;
+  /* color: var(--background); */
   cursor: pointer;
 }
 .pro-heart__add {
   position: absolute;
   right: 0;
   top: 10px;
-  color: #000;
+  color: #fff;
   cursor: pointer;
 }
 
 .products-content__items:hover {
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  box-shadow: var(--boxshadow) 0px 20px 30px -10px;
 }
 
 .products-content__items img {
-  width: 360px;
+  width: 350px;
   height: 270px;
   object-fit: contain;
 }
@@ -58,15 +62,16 @@
 }
 .product-price {
   text-align: center;
-  color: rgb(241, 196, 62);
+  color: var(--border);
   font-weight: 600;
   font-size: 18px;
   margin-bottom: 30px;
 }
 .btn-cart__add {
   position: absolute;
-  background: #ffb32f;
-  color: #fff;
+  background: var(--border);
+  color: var(--background);
+  z-index: 999;
   border: none;
   padding: 6px 10px;
   font-size: 17px;
@@ -77,6 +82,7 @@
 }
 .btn-cart__add .bx {
   margin-left: 5px;
+  color: var(--background);
 }
 
 .product-add__remove {
@@ -86,7 +92,7 @@
   position: absolute;
   right: 5px;
   bottom: 5px;
-  border: 1px solid rgb(241, 196, 62);
+  border: 1px solid var(--border);
   width: 80px;
   height: 30px;
   font-size: 20px;
@@ -95,18 +101,18 @@
 .product-add {
   padding: 2px 6px;
   cursor: pointer;
-  background: #fff;
-  border: 1px solid #ffb32f;
+  background: var(--background);
+  border: 1px solid var(--border);
 }
 .product-remove {
   padding: 2px 7px;
   cursor: pointer;
-  background: #fff;
-  border: 1px solid #ffb32f;
+  background: var(--background);
+  border: 1px solid var(--border);
 }
 .add_none {
   display: none;
 }
 .cart-add {
-  color: #000;
+  color: var(--text-primary);
 }

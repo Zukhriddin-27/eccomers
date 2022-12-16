@@ -1,11 +1,10 @@
 import { message } from 'antd'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import useRequest from '../../hooks/useRequest'
 
 const Signup = () => {
   const navigate = useNavigate()
-  const request = useRequest()
+
   const [body, setBody] = useState({})
 
   const handleReg = ({ target: { value, name } }) => {
@@ -46,31 +45,33 @@ const Signup = () => {
   }
   return (
     <div>
-      <form class='form' id='a-form' onSubmit={ourFields}>
-        <h2 class='form_title auth-title'>Create Account</h2>
-        <div class='form__icons'>
-          <img class='form__icon' src='' alt='' />
-          <img class='form__icon' src='' />
-          <img class='form__icon' src='' />
+      <form className='form' id='a-form' onSubmit={ourFields}>
+        <h2 className='form_title auth-title'>Create Account</h2>
+        <div className='form__icons'>
+          <img className='form__icon' src='' alt='' />
+          {/* eslint-disable-next-line */}
+          <img className='form__icon' src='' />
+          {/* eslint-disable-next-line */}
+          <img className='form__icon' src='' />
         </div>
-        <span class='form__span'>or use email for registration</span>
+        <span className='form__span'>or use email for registration</span>
         <input
           onChange={handleReg}
-          class='form__input'
+          className='form__input'
           type='text'
           name='name'
           placeholder='Name'
         />
         <input
           onChange={handleReg}
-          class='form__input'
+          className='form__input'
           type='text'
           name='email'
           placeholder='Email'
         />
         <input
           onChange={handleReg}
-          class='form__input'
+          className='form__input'
           type='text'
           name='avatar'
           placeholder='avatar'
@@ -78,12 +79,12 @@ const Signup = () => {
 
         <input
           onChange={handleReg}
-          class='form__input'
+          className='form__input'
           type='password'
           name='password'
           placeholder='Password'
         />
-        <button class='form__button auth-button submit' type='submit'>
+        <button className='form__button auth-button submit' type='submit'>
           SIGN UP
         </button>
       </form>

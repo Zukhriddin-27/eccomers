@@ -54,8 +54,9 @@ export const incerCart = (product) => async (dispatch) => {
       },
     ]
   }
+
   localStorage.setItem('cart', JSON.stringify(cartCount))
-  window.location.reload()
+  // window.location.reload()
 }
 
 export const decrCart = (product) => async (dispatch) => {
@@ -78,5 +79,5 @@ export const decrCart = (product) => async (dispatch) => {
     ]
   }
   localStorage.setItem('cart', JSON.stringify(cartCount))
-  window.location.reload()
+  // window.location.reload()
 }

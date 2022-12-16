@@ -369,9 +369,10 @@ const catalog = [
   },
 ]
 
-const Catalog = () => {
+const Catalog = ({ isNavbar }) => {
   const [isCatalog, setIsCatalog] = useState(false)
 
+  /* eslint-disable-next-line */
   const { isLoading, error, data } = useQuery('repoData', () =>
     fetch('https://fakestoreapi.com/products/categories').then((res) =>
       res.json()
@@ -393,7 +394,10 @@ const Catalog = () => {
       arrow={{ pointAtCenter: false }}
       trigger='click'
     >
-      <div onClick={() => setIsCatalog(!isCatalog)} className='brand-name'>
+      <div
+        onClick={() => setIsCatalog(!isCatalog)}
+        className={isNavbar ? 'brand-name brand-active' : ' brand-name'}
+      >
         {!isCatalog ? <UnorderedListOutlined /> : <CloseOutlined />}
         <h4>Katalog</h4>
       </div>

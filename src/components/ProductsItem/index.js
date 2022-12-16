@@ -24,6 +24,16 @@ const ProductsItem = () => {
 
   if (error) return 'An error has occurred: ' + error.message
 
+  // const cartSee = cart.find((item) => item?.id === data?.id)
+  // console.log(cartSee, 'count')
+  // if (cartSee === '') {
+  //   setAddCount(true)
+  //   setCartBtn('Remove from Cart')
+  // } else {
+  //   setAddCount(false)
+  //   setCartBtn('Add to Cart')
+  // }
+
   const handleAddCart = (product) => {
     if (cartBtn === 'Add to Cart') {
       dispatch(addToCart(product))
@@ -67,7 +77,7 @@ const ProductsItem = () => {
               <Breadcrumb.Item href='/home'>
                 <HomeOutlined />
               </Breadcrumb.Item>
-              <Breadcrumb.Item href={`/categories/${data?.category}`}>
+              <Breadcrumb.Item href={`/category/${data?.category}`}>
                 <span>{data?.category || 'No name'}</span>
               </Breadcrumb.Item>
               <Breadcrumb.Item href='/products'>

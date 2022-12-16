@@ -23,6 +23,7 @@ const Footer = () => {
             />
           </div>
           <div className='footer-social__item'>
+            {/* eslint-disable-next-line */}
             <img
               src='https://olcha.uz/_nuxt/footer-img.745872f8.webp'
               alt='image'
@@ -38,11 +39,11 @@ const Footer = () => {
               Aspernatur, et? <b>+998900000000</b>
             </p>
             <div className='footer-link__item'>
-              <i class='bx bx-current-location'></i>
+              <i className='bx bx-current-location'></i>
               <p>Uzbekiston, Tashkent</p>
             </div>
             <div className='footer-link__item'>
-              <i class='bx bxs-envelope'></i>
+              <i className='bx bxs-envelope'></i>
               <p>Uzbekiston, Tashkent</p>
             </div>
           </div>

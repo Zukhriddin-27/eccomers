@@ -39,16 +39,18 @@ const Signin = () => {
 
   return (
     <div>
-      <form class='form' id='b-form' method='' action='' onSubmit={logData}>
-        <h2 class='form_title auth-title'>Sign in to Website</h2>
-        <div class='form__icons'>
-          <img class='form__icon' src='' alt='' />
-          <img class='form__icon' src='' />
-          <img class='form__icon' src='' />
+      <form className='form' id='b-form' method='' action='' onSubmit={logData}>
+        <h2 className='form_title auth-title'>Sign in to Website</h2>
+        <div className='form__icons'>
+          <img className='form__icon' src='' alt='' />
+          {/* eslint-disable-next-line */}
+          <img className='form__icon' src='' />
+          {/* eslint-disable-next-line */}
+          <img className='form__icon' src='' />
         </div>
-        <span class='form__span'>or use your email account</span>
+        <span className='form__span'>or use your email account</span>
         <input
-          class='form__input'
+          className='form__input'
           type='text'
           name='email'
           placeholder='Email'
@@ -56,14 +58,15 @@ const Signin = () => {
         />
 
         <input
-          class='form__input'
+          className='form__input'
           type='password'
           name='password'
           onChange={handleSign}
           placeholder='Password'
         />
-        <a class='form__link'>Forgot your password?</a>
-        <button class='form__button auth-button submit' type='submit'>
+        {/* eslint-disable-next-line */}
+        <a className='form__link'>Forgot your password?</a>
+        <button className='form__button auth-button submit' type='submit'>
           SIGN IN
         </button>
       </form>

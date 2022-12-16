@@ -32,21 +32,27 @@ const Header = () => {
           className='mySwiper'
         >
           <SwiperSlide>
+            {/* eslint-disable-next-line */}
             <img src='https://olcha.uz/image/original/sliders/oz/25j0NV3Fk5e1cRf9TsSvwmenYChcHKfpmEYsdCCNzQP8WIREbpuzWH7HwwEb.' />{' '}
           </SwiperSlide>
           <SwiperSlide>
+            {/* eslint-disable-next-line */}
             <img src='https://olcha.uz/image/original/sliders/oz/N8KJP5ASm6Xl9R32pIDgIWsJyhTkki8jW406G0EENzWos9HfPJFEIY92JYoG.' />
           </SwiperSlide>
           <SwiperSlide>
+            {/* eslint-disable-next-line */}
             <img src='https://olcha.uz/image/original/sliders/oz/iR1rhv7MghF8F9AtsApdMHZbSfTzXL6VwY3lzUPMstt5wmek5ncgfFvBOIbE.' />
           </SwiperSlide>
           <SwiperSlide>
+            {/* eslint-disable-next-line */}
             <img src='https://olcha.uz/image/original/sliders/oz/jp3iHZasv5L5k6XF6Gm6QqFOtQTHIPCeS5JZ9rvVCQa44mFETAQMODqt09EN.' />
           </SwiperSlide>
           <SwiperSlide>
+            {/* eslint-disable-next-line */}
             <img src='https://olcha.uz/image/original/sliders/oz/msSynGqDtALEpUvsuUGi3O83kd9m8uzZDvfWYOhZHOOMW1yaHFtOKH53GEaQ.' />
           </SwiperSlide>
           <SwiperSlide>
+            {/* eslint-disable-next-line */}
             <img src='https://olcha.uz/image/original/sliders/oz/3PBAAYdoPxWhIbbHeTew3bFuJq2nCXT9l4NW8jtZ10StfXKQzdoNhIqV8eIG.' />
           </SwiperSlide>
         </Swiper>
@@ -70,6 +76,7 @@ const Header = () => {
           className='mySwiper'
         >
           <SwiperSlide>
+            {/* eslint-disable-next-line */}
             <img src='https://olcha.uz/image/220x220/products/B4Z0z4sfcgAYbH5i3Qe01UrCVeqp8Hgn5eiddgKwmz4Ic9bXCoJpAETw6Ke4.' />
             <div className='title'>Go‘sht maydalagich Tefal NE688837</div>
             <div className='head-content__item'>
@@ -78,6 +85,7 @@ const Header = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
+            {/* eslint-disable-next-line */}
             <img src='https://olcha.uz/image/220x220/products/B4Z0z4sfcgAYbH5i3Qe01UrCVeqp8Hgn5eiddgKwmz4Ic9bXCoJpAETw6Ke4.' />
             <div className='title'>Go‘sht maydalagich Tefal NE688837</div>
             <div className='head-content__item'>
@@ -86,6 +94,7 @@ const Header = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
+            {/* eslint-disable-next-line */}
             <img src='https://olcha.uz/image/220x220/products/B4Z0z4sfcgAYbH5i3Qe01UrCVeqp8Hgn5eiddgKwmz4Ic9bXCoJpAETw6Ke4.' />
             <div className='title'>Go‘sht maydalagich Tefal NE688837</div>
             <div className='head-content__item'>
