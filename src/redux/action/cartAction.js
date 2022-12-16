@@ -2,6 +2,7 @@ import {
   ADD_TO_CART,
   DELETE_FROM_CART,
   INCREMENT_TO_CART,
+  DECREMENT_FROM_CART,
 } from '../constants/cartConstant'
 
 export const addToCart = (product) => async (dispatch) => {
@@ -41,9 +42,12 @@ export const deleteFromCart = (product) => async (dispatch) => {
   })
 }
 export const incerCart = (product) => async (dispatch) => {
-  const cartCount = JSON.parse(localStorage.getItem('cart'))
+  const cartCount =
+    localStorage.getItem('cart') !== null
+      ? JSON.parse(localStorage.getItem('cart'))
+      : []
   const incr = cartCount.find((cartItem) => cartItem.id === product.id)
-  console.log(incr, 'incr')
+
   if (incr) {
     incr.count = incr.count += 1
   } else {
@@ -55,29 +59,36 @@ export const incerCart = (product) => async (dispatch) => {
     ]
   }
 
-  localStorage.setItem('cart', JSON.stringify(cartCount))
-  // window.location.reload()
+  localStorage.setItem('cart', JSON.stringify(cartCount.map((item) => item)))
+  dispatch({
+    type: INCREMENT_TO_CART,
+    payload: cartCount,
+  })
 }
 
 export const decrCart = (product) => async (dispatch) => {
-  const cartCount = JSON.parse(localStorage.getItem('cart'))
-  console.log(cartCount)
-  const incr = cartCount.find((cartItem) => cartItem.id === product.id)
-  console.log(incr, 'id')
+  const cartDecrCount =
+    localStorage.getItem('cart') !== null
+      ? JSON.parse(localStorage.getItem('cart'))
+      : []
 
-  if (incr) {
-    incr.count = incr.count -= 1
-    if (incr.count <= 0) {
-      incr.count = 1
+  const dcr = cartDecrCount.find((cartItem) => cartItem.id === product.id)
+  if (dcr) {
+    dcr.count = dcr.count -= 1
+    if (dcr.count <= 0) {
+      dcr.count = 1
     }
   } else {
     return [
-      ...cartCount,
+      ...cartDecrCount,
       {
         count: 1,
       },
     ]
   }
-  localStorage.setItem('cart', JSON.stringify(cartCount))
-  // window.location.reload()
+  localStorage.setItem('cart', JSON.stringify(cartDecrCount))
+  dispatch({
+    type: DECREMENT_FROM_CART,
+    payload: cartDecrCount,
+  })
 }
