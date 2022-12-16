@@ -11,6 +11,7 @@ const CartProduct = (props) => {
   const { data } = props
   const dispatch = useDispatch()
   const [isFavourite, setIsFavourite] = useState(false)
+  // eslint-disable-next-line
   const [isAdd, setIsAdd] = useState(false)
   const { cart } = useSelector((items) => items.cart)
   // const { favourite } = useSelector((items) => items.favourite)

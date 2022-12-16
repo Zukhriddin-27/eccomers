@@ -65,28 +65,34 @@ const Footer = () => {
           </div>
           <div className='footer-payment'>
             <div className='footer-payment__items'>
+              {/*  eslint-disable-next-line */}
               <img
                 src='https://logobank.uz:8005/media/logos_png/payme-01.png'
                 alt='s'
               />
+              {/*  eslint-disable-next-line */}
               <img
                 src='https://logobank.uz:8005/media/logos_png/click-01.png'
                 alt='s'
               />
+              {/*  eslint-disable-next-line */}
               <img
                 src='https://logobank.uz:8005/media/logos_png/Uzcard-01.png'
                 alt='s'
               />
             </div>
             <div className='footer-payment__items'>
+              {/*  eslint-disable-next-line */}
               <img
                 src='https://logobank.uz:8005/media/logos_png/Apelsin-01.png'
                 alt='s'
               />
+              {/*  eslint-disable-next-line */}
               <img
                 src='https://logobank.uz:8005/media/logos_png/Humo-01.jpg'
                 alt='s'
               />
+              {/*  eslint-disable-next-line */}
               <img
                 src='https://logobank.uz:8005/media/logos_png/payme-01.png'
                 alt='s'

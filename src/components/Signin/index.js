@@ -42,11 +42,11 @@ const Signin = () => {
       <form className='form' id='b-form' method='' action='' onSubmit={logData}>
         <h2 className='form_title auth-title'>Sign in to Website</h2>
         <div className='form__icons'>
-          <img className='form__icon' src='' alt='' />
+          <img className='form__icon' src='/assets/search.png' alt='' />
           {/* eslint-disable-next-line */}
-          <img className='form__icon' src='' />
+          <img className='form__icon' src='/assets/facebook.png' />
           {/* eslint-disable-next-line */}
-          <img className='form__icon' src='' />
+          <img className='form__icon' src='/assets/apple.png' />
         </div>
         <span className='form__span'>or use your email account</span>
         <input

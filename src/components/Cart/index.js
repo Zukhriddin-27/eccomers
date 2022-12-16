@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Breadcrumb, Divider, Empty, Select } from 'antd'
+import { Breadcrumb, Divider, Empty } from 'antd'
 import { HomeOutlined } from '@ant-design/icons'
 import './style.css'
 import Maps from '../Maps'
@@ -12,7 +12,6 @@ import {
 
 const Cart = () => {
   const { cart } = useSelector((state) => state.cart)
-  const [selectedItems, setSelectedItems] = useState([])
   const dispatch = useDispatch()
   const [isAdd, setIsAdd] = useState(false)
   const [isCart, setIsCart] = useState(false)

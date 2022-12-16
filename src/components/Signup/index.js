@@ -48,11 +48,11 @@ const Signup = () => {
       <form className='form' id='a-form' onSubmit={ourFields}>
         <h2 className='form_title auth-title'>Create Account</h2>
         <div className='form__icons'>
-          <img className='form__icon' src='' alt='' />
+          <img className='form__icon' src='/assets/search.png' alt='' />
           {/* eslint-disable-next-line */}
-          <img className='form__icon' src='' />
+          <img className='form__icon' src='/assets/facebook.png' />
           {/* eslint-disable-next-line */}
-          <img className='form__icon' src='' />
+          <img className='form__icon' src='/assets/apple.png' />
         </div>
         <span className='form__span'>or use email for registration</span>
         <input

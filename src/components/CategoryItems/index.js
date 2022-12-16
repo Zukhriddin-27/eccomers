@@ -15,6 +15,7 @@ const CategoryItems = () => {
           <div className='category-content__item'>
             <div className='category-card'>
               <div className='category-card__image'>
+                {/*  eslint-disable-next-line */}
                 <img
                   src='https://olcha.uz/image/220x220/products/OFLhO6OVhfJouvlaoWm6d0qp0Mbr8V0CKkbj04dWsVnIfqcKtdJ8ACRGPxQO.'
                   alt='apple.jpeg'
@@ -32,6 +33,7 @@ const CategoryItems = () => {
             <div className='category-card'>
               <div className='category-card__column'>
                 <div className='category-card__image'>
+                  {/*  eslint-disable-next-line */}
                   <img
                     src='https://olcha.uz/image/220x220/products/7auI1gNuna59uO9BHlEKrpeE331EagMB8DxHIseJpynkrfcFLU03dlvEked0.jpeg'
                     alt='apple.jpeg'
@@ -80,6 +82,7 @@ const CategoryItems = () => {
               <div className='app-category__items'>
                 <div className='category-card'>
                   <div className='category-card__image'>
+                    {/*  eslint-disable-next-line */}
                     <img
                       src='https://olcha.uz/image/220x220/products/OFLhO6OVhfJouvlaoWm6d0qp0Mbr8V0CKkbj04dWsVnIfqcKtdJ8ACRGPxQO.'
                       alt='apple.jpeg'
@@ -96,6 +99,7 @@ const CategoryItems = () => {
                 </div>
                 <div className='category-card'>
                   <div className='category-card__image'>
+                    {/*  eslint-disable-next-line */}
                     <img
                       src='https://olcha.uz/image/220x220/products/OFLhO6OVhfJouvlaoWm6d0qp0Mbr8V0CKkbj04dWsVnIfqcKtdJ8ACRGPxQO.'
                       alt='apple.jpeg'
@@ -112,6 +116,7 @@ const CategoryItems = () => {
                 </div>
                 <div className='category-card'>
                   <div className='category-card__image'>
+                    {/*  eslint-disable-next-line */}
                     <img
                       src='https://olcha.uz/image/220x220/products/OFLhO6OVhfJouvlaoWm6d0qp0Mbr8V0CKkbj04dWsVnIfqcKtdJ8ACRGPxQO.'
                       alt='apple.jpeg'
