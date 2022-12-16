@@ -3,7 +3,6 @@ import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import favouriteReducers from './reducer/favouriteReducers'
 import cartReducers from './reducer/cartReducer'
-import handleCart from './reducer/handleCart'
 const reducer = combineReducers({
   favourite: favouriteReducers,
   cart: cartReducers,
