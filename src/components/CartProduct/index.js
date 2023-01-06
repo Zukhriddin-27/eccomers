@@ -63,7 +63,7 @@ const CartProduct = (props) => {
         <div className='prodcuts-settings'>
           <div>
             <div className='bg-heart'>
-              <i class='bx bx-expand-alt'></i>
+              <i className='bx bx-expand-alt'></i>
             </div>
           </div>
           <div>

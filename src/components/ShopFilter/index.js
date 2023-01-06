@@ -14,143 +14,83 @@ const ShopFilter = () => {
       <div className='title'>
         <h3>Categories</h3>
       </div>
-      <div class='categories__accordion'>
-        <div class='accordion' id='accordionExample'>
+      <div className='categories__accordion'>
+        <div className='accordion' id='accordionExample'>
           <Collapse accordion expandIconPosition='end'>
-            <Panel class='card-heading' header='Women' key='1'>
-              <div id='collapseOne' class='collapse'>
-                <div class='card-body'>
+            <Panel className='card-heading' header='Women' key='1'>
+              <div id='collapseOne' className='collapse'>
+                <div className='card-body'>
                   <ul>
-                    <li>
-                      <a href='#'>Coats</a>
-                    </li>
-                    <li>
-                      <a href='#'>Jackets</a>
-                    </li>
-                    <li>
-                      <a href='#'>Dresses</a>
-                    </li>
-                    <li>
-                      <a href='#'>Shirts</a>
-                    </li>
-                    <li>
-                      <a href='#'>T-shirts</a>
-                    </li>
-                    <li>
-                      <a href='#'>Jeans</a>
-                    </li>
+                    <li>Coats</li>
+                    <li>Jackets</li>
+                    <li>Dresses</li>
+                    <li>Shirts</li>
+                    <li>T-shirts</li>
+                    <li>Jeans</li>
                   </ul>
                 </div>
               </div>
             </Panel>
           </Collapse>
           <Collapse accordion expandIconPosition='end'>
-            <Panel class='card-heading' header='Men' key='2'>
-              <div id='collapseOne' class='collapse'>
-                <div class='card-body'>
+            <Panel className='card-heading' header='Men' key='2'>
+              <div id='collapseOne' className='collapse'>
+                <div className='card-body'>
                   <ul>
-                    <li>
-                      <a href='#'>Coats</a>
-                    </li>
-                    <li>
-                      <a href='#'>Jackets</a>
-                    </li>
-                    <li>
-                      <a href='#'>Dresses</a>
-                    </li>
-                    <li>
-                      <a href='#'>Shirts</a>
-                    </li>
-                    <li>
-                      <a href='#'>T-shirts</a>
-                    </li>
-                    <li>
-                      <a href='#'>Jeans</a>
-                    </li>
+                    <li>Coats</li>
+                    <li>Jackets</li>
+                    <li>Dresses</li>
+                    <li>Shirts</li>
+                    <li>T-shirts</li>
+                    <li>Jeans</li>
                   </ul>
                 </div>
               </div>
             </Panel>
           </Collapse>
           <Collapse accordion expandIconPosition='end'>
-            <Panel class='card-heading' header='Kids' key='3'>
-              <div id='collapseOne' class='collapse'>
-                <div class='card-body'>
+            <Panel className='card-heading' header='Kids' key='3'>
+              <div id='collapseOne' className='collapse'>
+                <div className='card-body'>
                   <ul>
-                    <li>
-                      <a href='#'>Coats</a>
-                    </li>
-                    <li>
-                      <a href='#'>Jackets</a>
-                    </li>
-                    <li>
-                      <a href='#'>Dresses</a>
-                    </li>
-                    <li>
-                      <a href='#'>Shirts</a>
-                    </li>
-                    <li>
-                      <a href='#'>T-shirts</a>
-                    </li>
-                    <li>
-                      <a href='#'>Jeans</a>
-                    </li>
+                    <li>Coats</li>
+                    <li>Jackets</li>
+                    <li>Dresses</li>
+                    <li>Shirts</li>
+                    <li>T-shirts</li>
+                    <li>Jeans</li>
                   </ul>
                 </div>
               </div>
             </Panel>
           </Collapse>
           <Collapse accordion expandIconPosition='end'>
-            <Panel class='card-heading' header='Electronic' key='4'>
-              <div id='collapseOne' class='collapse'>
-                <div class='card-body'>
+            <Panel className='card-heading' header='Electronic' key='4'>
+              <div id='collapseOne' className='collapse'>
+                <div className='card-body'>
                   <ul>
-                    <li>
-                      <a href='#'>Coats</a>
-                    </li>
-                    <li>
-                      <a href='#'>Jackets</a>
-                    </li>
-                    <li>
-                      <a href='#'>Dresses</a>
-                    </li>
-                    <li>
-                      <a href='#'>Shirts</a>
-                    </li>
-                    <li>
-                      <a href='#'>T-shirts</a>
-                    </li>
-                    <li>
-                      <a href='#'>Jeans</a>
-                    </li>
+                    <li>Coats</li>
+                    <li>Jackets</li>
+                    <li>Dresses</li>
+                    <li>Shirts</li>
+                    <li>T-shirts</li>
+                    <li>Jeans</li>
                   </ul>
                 </div>
               </div>
             </Panel>
           </Collapse>
           <Collapse accordion expandIconPosition='end'>
-            <Panel class='card-heading' header='Jelewers' key='5'>
-              <div id='collapseOne' class='collapse'>
-                <div class='card-body'>
+            <Panel className='card-heading' header='Jelewers' key='5'>
+              <div id='collapseOne' className='collapse'>
+                <div className='card-body'>
                   <ul>
-                    <li>
-                      <a href='#'>Coats</a>
-                    </li>
-                    <li>
-                      <a href='#'>Jackets</a>
-                    </li>
-                    <li>
-                      <a href='#'>Dresses</a>
-                    </li>
-                    <li>
-                      <a href='#'>Shirts</a>
-                    </li>
-                    <li>
-                      <a href='#'>T-shirts</a>
-                    </li>
-                    <li>
-                      <a href='#'>Jeans</a>
-                    </li>
+                    <li>Coats</li>
+                    <li>Jackets</li>
+                    <li>Dresses</li>
+                    <li>Shirts</li>
+                    <li>T-shirts</li>
+                    <li>Jeans</li>
                   </ul>
                 </div>
               </div>
@@ -169,8 +109,8 @@ const ShopFilter = () => {
           defaultValue={[1, 600]}
           onChange={onChange}
         />
-        <div class='range-slider'>
-          <div class='price-input'>
+        <div className='range-slider'>
+          <div className='price-input'>
             <p>Price:</p>
             <span>$</span>
             <input type='text' value={inputValue[0]} id='minamount' />

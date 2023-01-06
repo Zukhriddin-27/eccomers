@@ -30,10 +30,6 @@ const Cart = () => {
   }
   window.addEventListener('scroll', changeBackground)
 
-  const onPanelChange = (value, mode) => {
-    console.log(value.format('YYYY-MM-DD'), mode)
-  }
-
   return (
     <div className='cart-container'>
       <div className='shop-cart__container'>

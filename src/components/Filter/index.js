@@ -1,14 +1,13 @@
 import { Divider, Modal } from 'antd'
 import React, { useEffect, useRef, useState } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
-import { uzeReplace } from '../../hooks/useReplace'
+import { useNavigate } from 'react-router-dom'
 import './style.css'
 const Filter = ({ isNavbar }) => {
   const [data, setData] = useState([])
   const titleRef = useRef()
-  const location = useLocation()
   const navigate = useNavigate()
   const [isModalOpen, setIsModalOpen] = useState(false)
+  // eslint-disable-next-line
   const [isLoading, setIsLoading] = useState(false)
   const [filData, setFilData] = useState([])
 
@@ -33,9 +32,6 @@ const Filter = ({ isNavbar }) => {
   }
   console.log(filData)
 
-  const showModal = () => {
-    setIsModalOpen(true)
-  }
   const handleOk = () => {
     setIsModalOpen(false)
   }

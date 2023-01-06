@@ -137,7 +137,7 @@ const Navbar = () => {
             </Dropdown>
           ) : (
             <i
-              class='bx bxs-user-account bx-flip-horizontal bx-burst'
+              className='bx bxs-user-account bx-flip-horizontal bx-burst'
               onClick={() => navigate('/register')}
             ></i>
           )}
