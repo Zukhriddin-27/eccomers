@@ -126,7 +126,6 @@
 
 .cart-form {
   display: flex;
-  position: relative;
 }
 .shop-total {
   padding: 40px;
@@ -137,9 +136,9 @@
   height: 310px;
   margin-top: 50px;
   text-align: end;
-
   position: sticky;
   top: 80px;
+  right: 0;
   z-index: 999;
 }
 .shop-total h4,

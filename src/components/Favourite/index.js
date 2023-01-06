@@ -5,6 +5,7 @@ import { Breadcrumb, Empty } from 'antd'
 
 import CartProduct from '../CartProduct'
 import { useSelector } from 'react-redux'
+import ShopFilter from '../ShopFilter'
 
 const Header = () => {
   const { favourite } = useSelector((state) => state.favourite)
@@ -28,15 +29,24 @@ const Header = () => {
           </Breadcrumb.Item>
         </Breadcrumb>
       </div>
-      {favourite?.length !== 0 ? (
-        <div className='products-content'>
-          {favourite.map((items) => {
-            return <CartProduct data={items} />
-          })}
+      <div className='wrapper'>
+        <div className='row'>
+          <div className='col-3'>
+            <ShopFilter />
+          </div>
+          <div className='col-9'>
+            {favourite?.length !== 0 ? (
+              <div className='products-content'>
+                {favourite.map((items) => {
+                  return <CartProduct data={items} />
+                })}
+              </div>
+            ) : (
+              <Empty />
+            )}
+          </div>
         </div>
-      ) : (
-        <Empty />
-      )}
+      </div>
     </div>
   )
 }

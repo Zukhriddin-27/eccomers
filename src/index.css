@@ -18,12 +18,12 @@
   --search: #000;
 }
 [data-theme='dark'] {
-  --background: rgb(56, 56, 56);
+  --background: rgb(44, 44, 44);
   --text-primary: #ffb32f;
   --text-secondary: #fff;
   --text: rgb(0, 0, 255);
   --border: #ffb32f;
-  --page: #393939;
+  --page: #1e1e1e;
   --borderbg: rgb(232, 232, 232);
   --price: red;
   --bg-register: #ecf0f3;
@@ -109,4 +109,20 @@ li {
 .ant-breadcrumb-link,
 .ant-breadcrumb-separator {
   color: var(--border) !important;
+}
+.scroll-to-top {
+  opacity: 0.7;
+  transition: all 0.2s;
+}
+.scroll-to-top:hover {
+  opacity: 1;
+}
+.scroll-to-top svg {
+  width: 16px !important;
+  height: 16px !important;
+  transition: all 0.2s;
+}
+.scroll-to-top svg:hover {
+  width: 18px !important;
+  height: 20px !important;
 }

@@ -1,11 +1,12 @@
 import { message } from 'antd'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import useRequest from '../../hooks/useRequest'
 
 const Signin = () => {
   const [body, setBody] = useState({})
   const navigate = useNavigate()
-
+  const request = useRequest()
   const handleSign = ({ target: { value, name } }) => {
     setBody({
       ...body,
@@ -15,26 +16,29 @@ const Signin = () => {
 
   const logData = (e) => {
     e.preventDefault()
-
-    fetch('https://api.escuelajs.co/api/v1/auth/login', {
+    request({
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(body),
+      url: '/api/auth/signin',
+      body,
     })
-      .then((res) => res.json())
-      .then((data) => {
-        info()
-        navigate('/home')
+      .then((res) => {
+        if (res?.token) {
+          navigate('/home')
+          info(res.successMessage)
+          localStorage.setItem('token', res?.token)
+          localStorage.setItem('user', JSON.stringify(res?.user))
+        }
       })
       .catch((err) => {
-        console.log(err)
+        warning(err)
       })
   }
 
   const info = () => {
     message.info('Succesfully Logged')
+  }
+  const warning = (e) => {
+    message.warning(e)
   }
 
   return (

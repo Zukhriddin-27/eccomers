@@ -3,6 +3,7 @@ import {
   DELETE_FROM_CART,
   INCREMENT_TO_CART,
   DECREMENT_FROM_CART,
+  CLEAR_FROM_CART,
 } from '../constants/cartConstant'
 
 export const addToCart = (product) => async (dispatch) => {
@@ -41,6 +42,7 @@ export const deleteFromCart = (product) => async (dispatch) => {
     payload: updatedCart,
   })
 }
+
 export const incerCart = (product) => async (dispatch) => {
   const cartCount =
     localStorage.getItem('cart') !== null

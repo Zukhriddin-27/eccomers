@@ -24,7 +24,7 @@ const Header = () => {
           navigation={true}
           mousewheel={true}
           autoplay={{
-            delay: 2500,
+            delay: 4000,
             disableOnInteraction: false,
           }}
           keyboard={true}
@@ -69,7 +69,7 @@ const Header = () => {
           mousewheel={true}
           keyboard={true}
           autoplay={{
-            delay: 2500,
+            delay: 3500,
             disableOnInteraction: false,
           }}
           modules={[Navigation, Autoplay, Mousewheel, Keyboard]}

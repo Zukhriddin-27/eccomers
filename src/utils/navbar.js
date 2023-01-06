@@ -3,6 +3,7 @@ import AuthPage from '../page/Auth'
 import CartPage from '../page/Cart'
 import CategoryProductsPage from '../page/CategoryProduct'
 import Favourite from '../page/Favourite'
+import ProfilePage from '../page/Profile'
 const Home = React.lazy(() => import('../page/Home'))
 const Products = React.lazy(() => import('../page/Products'))
 const ProductItemPage = React.lazy(() => import('../page/ProductsItems'))
@@ -70,6 +71,14 @@ export const navbar = [
   },
   {
     id: 7,
+    element: <ProfilePage />,
+    title: 'Profile',
+    path: '/profile',
+    private: false,
+    hidden: true,
+  },
+  {
+    id: 8,
     element: <Favourite />,
     title: 'Favourite',
     path: '/favourite',

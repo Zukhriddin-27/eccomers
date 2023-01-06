@@ -1,0 +1,156 @@
+.col-3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+  /* border: 1px solid red; */
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.filter .title {
+  color: #111111 !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  opacity: 1;
+}
+.filter .title:after {
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 70px;
+  background: var(--border);
+  content: '';
+}
+.categories__accordion {
+  margin-top: 16px;
+  margin-bottom: 40px;
+}
+:where(.css-dev-only-do-not-override-1s3dcof).ant-collapse {
+  background-color: #fff;
+}
+.card-heading {
+  cursor: pointer;
+}
+.ant-collapse {
+  border: none !important;
+  border-radius: 0 !important;
+  border-bottom: 1px solid #f2f2f2 !important;
+}
+.ant-collapse-item {
+  border: none !important;
+  opacity: 1 !important;
+}
+.card-body {
+  padding-left: 0;
+  padding-top: 6px;
+  padding-bottom: 0;
+  min-height: 1px;
+  padding: 0 1.25rem;
+}
+
+.categories__accordion .card-body li {
+  list-style: none;
+  position: relative;
+  padding-left: 16px;
+  margin: 15px 0;
+  opacity: 0.8;
+}
+.categories__accordion .card-body li:before {
+  position: absolute;
+  left: 4px;
+  top: 11px;
+  height: 1px;
+  width: 4px;
+  background: #666666;
+  content: '';
+}
+.filter-price {
+  position: relative;
+  top: 20px;
+}
+.ant-slider .ant-slider-track {
+  position: absolute;
+  background-color: var(--border);
+  border-radius: 2px;
+  transition: background-color 0.2s;
+}
+.ant-slider .ant-slider-handle::after {
+  box-shadow: 0 0 0 2px var(--border);
+}
+.ant-slider .ant-slider-handle:focus::after {
+  box-shadow: 0 0 0 4px var(--border);
+  width: 12px;
+  height: 12px;
+  inset-inline-start: -1px;
+  inset-block-start: -1px;
+}
+.range-slider {
+  margin-top: 40px;
+}
+.price-input p {
+  font-size: 16px;
+  color: #0d0d0d;
+  font-weight: 500;
+  display: inline-block;
+  margin-bottom: 0;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+.price-input input {
+  font-size: 16px;
+  color: #0d0d0d;
+  max-width: 12%;
+  border: none;
+}
+.price-input span {
+  font-weight: 300;
+}
+.filter .title:nth-child(5) {
+  margin-top: 60px;
+}
+
+.filter-checkbox {
+  margin-top: 20px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  margin-bottom: 60px;
+}
+.ant-checkbox-inner {
+  background-color: var(--border);
+  border-color: transparent;
+}
+.ant-checkbox-wrapper {
+  margin-top: 20px;
+  opacity: 0.8;
+}
+:where(.css-dev-only-do-not-override-1s3dcof).ant-checkbox-wrapper:not(
+    .ant-checkbox-wrapper-disabled
+  ):hover
+  .ant-checkbox-inner,
+:where(.css-dev-only-do-not-override-1s3dcof).ant-checkbox:not(
+    .ant-checkbox-disabled
+  ):hover
+  .ant-checkbox-inner {
+  border-color: var(--border);
+}
+:where(.css-dev-only-do-not-override-1s3dcof).ant-checkbox-checked:not(
+    .ant-checkbox-disabled
+  ):hover
+  .ant-checkbox-inner {
+  background-color: var(--border);
+  border-color: transparent;
+}
+:where(.css-dev-only-do-not-override-1s3dcof).ant-checkbox-checked
+  .ant-checkbox-inner {
+  background-color: var(--border);
+  border-color: var(--border);
+  z-index: 2;
+}
+.ant-checkbox-wrapper {
+  margin-inline-start: 0px !important;
+}

@@ -5,7 +5,6 @@ import Signup from '../Signup'
 import './style.css'
 const Auth = () => {
   const [isHidden, setIsHidden] = useState(true)
-
   return (
     <div className='auth'>
       <div className='main'>
@@ -17,7 +16,7 @@ const Auth = () => {
           }
           id='a-container'
         >
-          <Signup />
+          <Signup isHidden={isHidden} setIsHidden={setIsHidden} />
         </div>
         <div
           className={

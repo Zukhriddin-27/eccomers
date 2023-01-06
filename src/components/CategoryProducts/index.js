@@ -5,6 +5,7 @@ import { HomeOutlined } from '@ant-design/icons'
 import { Breadcrumb } from 'antd'
 import Loading from '../Loading'
 import CartProduct from '../CartProduct'
+import ShopFilter from '../ShopFilter'
 
 const CategoryProduct = () => {
   const [data, setData] = useState([])
@@ -20,7 +21,6 @@ const CategoryProduct = () => {
       })
   }, [search])
 
-  console.log(data)
   // const handleChange = ({ target: { limit, defaultCurrent } }) => {
   //   navigate(`${location?.pathname}${uzeReplace(limit, defaultCurrent)}`)
   // }
@@ -43,15 +43,23 @@ const CategoryProduct = () => {
           </Breadcrumb.Item>
         </Breadcrumb>
       </div>
-
-      <div className='products-content'>
-        {isLoading ? (
-          <Loading />
-        ) : (
-          data?.map((items) => {
-            return <CartProduct data={items} />
-          })
-        )}
+      <div className='wrapper'>
+        <div className='row'>
+          <div className='col-3'>
+            <ShopFilter />
+          </div>
+          <div className='col-9'>
+            <div className='products-content'>
+              {isLoading ? (
+                <Loading />
+              ) : (
+                data?.map((items) => {
+                  return <CartProduct data={items} />
+                })
+              )}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )

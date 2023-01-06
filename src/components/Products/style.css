@@ -1,8 +1,27 @@
+.wrapper {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  box-sizing: border-box;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  box-sizing: border-box;
+}
+
+.col-9 {
+  flex: 0 0 75%;
+  max-width: 75%;
+}
 .product-container {
-  max-width: 1140px;
+  max-width: 1260px;
   width: 100%;
   margin: auto;
   padding-top: 10px;
+  box-sizing: border-box;
 }
 .location {
   margin: 30px 0;
@@ -11,5 +30,15 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  min-height: 460px;
+}
+.ant-select {
+  display: none;
+}
+.ant-pagination {
+  margin-top: 50px;
+  text-align: center;
+}
+.ant-pagination .ant-pagination-prev,
+.ant-pagination .ant-pagination-next {
+  vertical-align: baseline;
 }

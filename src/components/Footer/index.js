@@ -101,7 +101,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <Divider />
       <div className='footer-container__items'>
         <p>© 2020-2022. ООО "Rolex store"</p>
       </div>

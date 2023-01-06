@@ -1,3 +1,4 @@
+CI='' npm run build
 
 
 [[redirects]]

@@ -13,7 +13,7 @@
   border-radius: 8px;
 }
 .search {
-  width: 700px;
+  width: 640px;
   height: 50px;
   padding: 0 20px;
   font-size: 18px;
@@ -24,4 +24,9 @@
 }
 .search-active {
   border: 2px solid #000;
+}
+.ant-modal .ant-modal-content {
+  top: 50px !important;
+  left: -86px !important;
+  width: 646px !important;
 }

@@ -5,13 +5,12 @@ import { HomeOutlined } from '@ant-design/icons'
 import { Breadcrumb } from 'antd'
 import Loading from '../Loading'
 import CartProduct from '../CartProduct'
-
+import ShopFilter from '../ShopFilter'
+import { Pagination } from 'antd'
 const Header = () => {
   const [data, setData] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const { search } = useLocation()
-
-  // const favoLocal = JSON.parse(localStorage.getItem('favourite'))
 
   useEffect(() => {
     setIsLoading(true)
@@ -26,7 +25,7 @@ const Header = () => {
 
   return (
     <div className='product-container'>
-      <div className='content-title'>All Products</div>
+      <div className='content-title'>Shop</div>
       <div className='content-subTitle'>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores ad
         totam, et alias dolorum harum explicabo, earum saepe est sit commodi
@@ -39,18 +38,32 @@ const Header = () => {
             <HomeOutlined />
           </Breadcrumb.Item>
           <Breadcrumb.Item href='/products'>
-            <span>All Products</span>
+            <span>Shop</span>
           </Breadcrumb.Item>
         </Breadcrumb>
       </div>
-      <div className='products-content'>
-        {isLoading ? (
-          <Loading />
-        ) : (
-          data?.map((items) => {
-            return <CartProduct data={items} />
-          })
-        )}
+      <div className='wrapper'>
+        <div className='row'>
+          <div className='col-3'>
+            <ShopFilter />
+          </div>
+          <div className='col-9'>
+            <div className='products-content'>
+              {isLoading ? (
+                <Loading />
+              ) : (
+                data?.map((items) => {
+                  return (
+                    <>
+                      <CartProduct data={items} />
+                    </>
+                  )
+                })
+              )}
+            </div>
+            <Pagination defaultCurrent={1} total={50} />
+          </div>
+        </div>
       </div>
     </div>
   )
